@@ -9,15 +9,15 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
 // Import Layout pages of App
-import AuthLayout from '../pages/_Layouts/auth';
-import DefaultLayout from '../pages/_Layouts/default';
+import AuthLayout from '~/pages/_Layouts/auth';
+import DefaultLayout from '~/pages/_Layouts/default';
 
 export default function RouteWrapper({
   component: Component,
   isPrivate, // Define the private pgaes
   ...rest
 }) {
-  const signed = true; // Inform the login status of user
+  const signed = false; // Inform the login status of user
 
   // Redirect a user not logged out a private page
   if (!signed && isPrivate) {
