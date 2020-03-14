@@ -5,7 +5,7 @@
 
 //  Import dependencies
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
@@ -24,6 +24,7 @@ const schema = Yup.object().shape({
 
 export default function SignIn() {
   const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit({ email, password }) {
     dispatch(signInRequest(email, password));
@@ -40,7 +41,9 @@ export default function SignIn() {
           <p>Sua Senha</p>
           <Input name="password" type="password" placeholder="*************" />
 
-          <button type="submit">Entrar no Sistema</button>
+          <button type="submit">
+            {loading ? 'Carregando...' : 'Entrar no Sistema'}
+          </button>
         </Form>
       </div>
     </div>
