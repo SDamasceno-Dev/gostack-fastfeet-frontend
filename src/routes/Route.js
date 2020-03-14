@@ -8,6 +8,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
+// Import Layout pages of App
+import AuthLayout from '../pages/_Layouts/auth';
+import DefaultLayout from '../pages/_Layouts/default';
+
 export default function RouteWrapper({
   component: Component,
   isPrivate, // Define the private pgaes
@@ -25,7 +29,19 @@ export default function RouteWrapper({
     return <Redirect to="/delivery" />;
   }
 
-  return <Route {...rest} component={Component} />;
+  // Conditional to define wich page will be loaded
+  const Layout = signed ? DefaultLayout : AuthLayout;
+
+  return (
+    <Route
+      {...rest}
+      render={props => (
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      )}
+    />
+  );
 }
 
 // Prop-Types Definitions
