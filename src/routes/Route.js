@@ -12,12 +12,14 @@ import { Route, Redirect } from 'react-router-dom';
 import AuthLayout from '~/pages/_Layouts/auth';
 import DefaultLayout from '~/pages/_Layouts/default';
 
+import store from '~/store';
+
 export default function RouteWrapper({
   component: Component,
   isPrivate, // Define the private pgaes
   ...rest
 }) {
-  const signed = false; // Inform the login status of user
+  const { signed } = store.getState().auth; // Inform the login status of user
 
   // Redirect a user not logged out a private page
   if (!signed && isPrivate) {
