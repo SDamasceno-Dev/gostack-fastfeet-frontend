@@ -4,7 +4,8 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
 // Pages of the App
 import SignIn from '../pages/SignIn';
@@ -17,10 +18,18 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/" exact component={SignIn} />
-      <Route path="/delivery" component={Delivery} />
-      <Route path="/courier" component={Courier} />
-      <Route path="/recipient" component={Recipient} />
-      <Route path="/delivery/problem" component={DeliveryProblem} />
+
+      <Route path="/delivery" component={Delivery} isPrivate />
+      <Route path="/courier" component={Courier} isPrivate />
+      <Route path="/recipient" component={Recipient} isPrivate />
+      <Route
+        path="/deliveryproblem"
+        exact
+        component={DeliveryProblem}
+        isPrivate
+      />
+
+      <Route path="/" component={() => <h1>404</h1>} />
     </Switch>
   );
 }

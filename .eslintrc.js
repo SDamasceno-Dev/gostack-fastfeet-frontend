@@ -33,14 +33,15 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     // Permitir a alteração de parâmetros recebidos em uma função
-    "no-param-reassign": "off",
+    'no-param-reassign': 'off',
     // Evitar que o uso do console.tron gere alerta por parte do ESLint
-    "no-console": ["error", { allow: ["tron"] }],
+    'no-console': ['error', { allow: ['tron'] }],
     // Alterar a validação de declaração de variáveis antes de componentes
     'react/sort-comp': 'off',
     // Criar estados dentro da classe, sem precisar utilizar constructor
     'react/state-in-constructor': 'off',
     // Criar variáveis estáticas, como a propTypes, dentro da sua classe
     'react/static-property-placement': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };
