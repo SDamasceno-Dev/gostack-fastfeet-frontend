@@ -36,7 +36,7 @@ export const Content = styled.div`
         text-align: left;
         margin-top: 42px;
 
-        span {
+        p {
           font-weight: bold;
           font-size: 14px;
           text-transform: uppercase;
@@ -50,12 +50,19 @@ export const Content = styled.div`
           border: 1px solid #dddddd;
           border-radius: 4px;
           padding: 0 15px;
-          margin-bottom: 15px;
+          margin-bottom: 20px;
 
           &::placeholder {
             color: #999999;
             font-size: 16px;
           }
+        }
+
+        span {
+          color: #f64c75;
+          align-self: flex-start;
+          margin: -15px 0 10px;
+          font-weight: bold;
         }
 
         button {
