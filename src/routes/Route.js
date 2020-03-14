@@ -17,7 +17,7 @@ export default function RouteWrapper({
   isPrivate, // Define the private pgaes
   ...rest
 }) {
-  const signed = false; // Inform the login status of user
+  const signed = true; // Inform the login status of user
 
   // Redirect a user not logged out a private page
   if (!signed && isPrivate) {
