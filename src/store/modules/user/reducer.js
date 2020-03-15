@@ -11,15 +11,23 @@ const INITIAL_STATE = {
 };
 
 export default function user(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    case '@auth/SIGN_IN_SUCCESS':
-      return produce(state, draft => {
+  return produce(state, draft => {
+    switch (action.type) {
+      case '@auth/SIGN_IN_SUCCESS': {
         draft.profileId = action.payload.id;
         draft.profileName = action.payload.name;
         draft.profileEmail = action.payload.email;
         draft.signed = true;
-      });
-    default:
-      return state;
-  }
+        break;
+      }
+      case '@auth/SIGN_OUT': {
+        draft.profileId = null;
+        draft.profileName = null;
+        draft.profileEmail = null;
+        break;
+      }
+      default:
+        return state;
+    }
+  });
 }

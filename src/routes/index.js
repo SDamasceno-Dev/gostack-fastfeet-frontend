@@ -23,7 +23,7 @@ export default function Routes() {
       <Route path="/courier" component={Courier} isPrivate />
       <Route path="/recipient" component={Recipient} isPrivate />
       <Route
-        path="/deliveryproblem"
+        path="/delivery/problem"
         exact
         component={DeliveryProblem}
         isPrivate

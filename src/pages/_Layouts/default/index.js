@@ -3,13 +3,23 @@
  * @description: Default Layout Page
  */
 
+//  Import dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Import default components
+import Header from '~/components/Header';
+
+// Import styles
 import { Wrapper } from './styles';
 
 export default function DefaultLayout({ children }) {
-  return <Wrapper>{children}</Wrapper>;
+  return (
+    <Wrapper>
+      <Header />
+      {children}
+    </Wrapper>
+  );
 }
 
 // Prop-Types Definitions
