@@ -16,7 +16,7 @@ import { store } from '~/store';
 
 export default function RouteWrapper({
   component: Component,
-  isPrivate, // Define the private pgaes
+  isPrivate, // Define the private pages
   ...rest
 }) {
   const { signed } = store.getState().auth; // Inform the login status of user

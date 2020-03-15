@@ -3,10 +3,19 @@
  * @description: Page specific to show informarion about Delivery
  */
 
+// Import dependencies
 import React from 'react';
+
+// Import Templates
+import ListTemplate from '~/pages/_Layouts/listContainer/listDB.js';
 
 // import { Container } from './styles';
 
 export default function Delivery() {
-  return <h1>Delivery</h1>;
+  // const configList = {
+  //   title: 'Gerenciando encomendas',
+  //   toolsBar: false,
+  // };
+
+  return <ListTemplate />;
 }
