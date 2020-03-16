@@ -23,6 +23,7 @@ export const ToolsBar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 35px;
+  display: ${props => (props.visible ? 'flex' : 'none')};
 `;
 
 export const InputSearch = styled.input`
@@ -65,14 +66,15 @@ export const ListContainer = styled.div`
 `;
 
 export const ListHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 60px repeat(calc(${props => props.colQtd} - 2), 1fr) 60px;
   padding: 0 23px;
 
   span {
     font-size: 16px;
     font-weight: bold;
     color: #444444;
+    text-align: ${props => props.key};
   }
 `;
 
@@ -84,9 +86,9 @@ export const ListContent = styled.div`
 `;
 
 export const ListElement = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 60px repeat(calc(${props => props.colQtd} - 2), 1fr) 60px;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 57px;
   padding: 0 23px;
