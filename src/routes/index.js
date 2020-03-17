@@ -19,10 +19,10 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={SignIn} />
 
-      <Route path="/delivery" component={Delivery} isPrivate />
+      <Route path="/delivery" exact component={Delivery} isPrivate />
       <Route path="/courier" component={Courier} isPrivate />
       <Route path="/recipient" component={Recipient} isPrivate />
-      <Route path="/delivery/problem" component={DeliveryProblem} isPrivate />
+      <Route path="/problem" component={DeliveryProblem} isPrivate />
 
       <Route path="/" component={() => <h1>404</h1>} />
     </Switch>

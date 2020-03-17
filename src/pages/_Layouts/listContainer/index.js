@@ -1,20 +1,24 @@
 /**
- *
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: Template for all listing
  */
 
 // Import dependencies
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Form, Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
-import Actions from '~/components/Actions';
+import RegisterActions from '~/components/RegisterActions';
+import Modal from '~/components/Modal';
+
+import api from '~/services/api';
 
 import {
   Container,
-  Title,
   ToolsBar,
-  InputSearch,
+  BtnSearch,
   BtnRegister,
   ListContainer,
   ListHeader,
@@ -22,17 +26,55 @@ import {
   ListElement,
 } from './styles';
 
-export default function ListTemplate({ configList, search }) {
-  const { title, label, toolBar } = configList;
+export default function ListTemplate({ configList }) {
+  const { title, label, toolsBar, apiPath, inputPlaceholder } = configList;
+  const loading = false;
+
+  const [search, setListSearch] = useState([]);
+  const [queryParam, setQuery] = useState();
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    async function loadSearch() {
+      const response = await api.get(apiPath, {
+        params: { q: queryParam },
+      });
+
+      setListSearch(response.data);
+    }
+    loadSearch();
+  }, [apiPath, queryParam]);
+
+  function handleQuerySearch({ query }) {
+    console.tron.log(query);
+    setQuery(query);
+  }
+
+  function handleToggleVisible() {
+    setVisible(!visible);
+  }
 
   return (
     <Container>
-      <Title>
+      <Modal visible={visible} showModal={() => handleToggleVisible()} />
+      <div id="Title">
         <strong>{title}</strong>
-      </Title>
-      <ToolsBar visible={toolBar}>
-        <InputSearch placeholder="Buscar por encomendas" />
-        <BtnRegister>
+      </div>
+      <ToolsBar visible={toolsBar}>
+        <Form onSubmit={handleQuerySearch}>
+          <div id="Form">
+            <FaSearch color="#999999" size={14} />
+            <Input name="query" placeholder={inputPlaceholder} />
+          </div>
+          <BtnSearch loading={loading}>
+            {loading ? (
+              <FaSpinner color="#fff" size={14} />
+            ) : (
+              <FaSearch color="#fff" size={14} />
+            )}
+          </BtnSearch>
+        </Form>
+        <BtnRegister onClick={handleToggleVisible}>
           <FaPlus color="#fff" size={14} />
           <span>CADASTRAR</span>
         </BtnRegister>
@@ -52,7 +94,7 @@ export default function ListTemplate({ configList, search }) {
               <span>{srch.recipient.city}</span>
               <span>{srch.recipient.state}</span>
               <span>{srch.createdAt}</span>
-              <Actions />
+              <RegisterActions />
             </ListElement>
           ))}
         </ListContent>
@@ -65,8 +107,8 @@ ListTemplate.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,
     label: PropTypes.array,
-    toolBar: PropTypes.bool,
+    toolsBar: PropTypes.bool,
+    apiPath: PropTypes.string,
+    inputPlaceholder: PropTypes.string,
   }).isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  search: PropTypes.array.isRequired,
 };

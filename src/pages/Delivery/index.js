@@ -4,14 +4,10 @@
  */
 
 // Import dependencies
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // Import Templates
 import ListTemplate from '~/pages/_Layouts/listContainer';
-
-import api from '~/services/api';
-
-// import { Container } from './styles';
 
 export default function Delivery() {
   const configList = {
@@ -25,20 +21,10 @@ export default function Delivery() {
       'Status',
       'Ações',
     ],
-    toolBar: true,
+    toolsBar: true,
+    inputPlaceholder: 'Buscar por encomendas',
+    apiPath: 'delivery',
   };
 
-  // specific of the delivery
-  const [search, setListSearch] = useState([]);
-
-  useEffect(() => {
-    async function loadSearch() {
-      const response = await api.get('delivery');
-
-      setListSearch(response.data);
-    }
-    loadSearch();
-  }, []);
-
-  return <ListTemplate configList={configList} search={search} />;
+  return <ListTemplate configList={configList} />;
 }

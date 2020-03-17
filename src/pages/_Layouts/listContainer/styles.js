@@ -6,15 +6,30 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-`;
 
-export const Title = styled.div`
-  margin-top: 37px;
+  div#Title {
+    margin-top: 37px;
 
-  strong {
-    font-size: 24px;
-    font-weight: bold;
-    color: #444444;
+    strong {
+      font-size: 24px;
+      font-weight: bold;
+      color: #444444;
+    }
+  }
+
+  div#Form {
+    display: flex;
+    align-items: center;
+    width: 237px;
+    height: 36px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding-left: 16px;
+    background: #fff;
+
+    svg {
+      margin-right: 8px;
+    }
   }
 `;
 
@@ -24,20 +39,35 @@ export const ToolsBar = styled.div`
   justify-content: space-between;
   margin-top: 35px;
   display: ${props => (props.visible ? 'flex' : 'none')};
+
+  form {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      font-size: 14px;
+      color: #444444;
+      border: 0;
+      background: #fff;
+
+      &::placeholder {
+        color: #999999;
+      }
+    }
+  }
 `;
 
-export const InputSearch = styled.input`
-  width: 237px;
+export const BtnSearch = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
   height: 36px;
-  font-size: 14px;
-  color: #444444;
-  border: 1px solid #dddddd;
+  background: #7d40e7;
+  border: 0;
   border-radius: 4px;
-  padding-left: 16px;
-
-  &::placeholder {
-    color: #999999;
-  }
+  margin-left: 5px;
 `;
 
 export const BtnRegister = styled.button`
@@ -88,10 +118,9 @@ export const ListContent = styled.div`
 export const ListElement = styled.div`
   display: grid;
   grid-template-columns: 60px repeat(calc(${props => props.colQtd} - 2), 1fr) 60px;
-  align-items: center;
   width: 100%;
   height: 57px;
-  padding: 0 23px;
+  padding: 20px 23px;
   background: #fff;
   border-radius: 4px;
   margin-bottom: 21px;
@@ -101,3 +130,5 @@ export const ListElement = styled.div`
     color: #666666;
   }
 `;
+
+export const ModalWindow = styled.div``;
