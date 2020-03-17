@@ -5,15 +5,25 @@
 
 import React, { useState } from 'react';
 
+import PropTypes from 'prop-types';
+
 import { FaEllipsisH, FaEye, FaPen, FaTrashAlt } from 'react-icons/fa';
 
 import { Container, ActionBtnMenu, ActionMenu, ActionItem } from './styles';
 
-export default function Actions() {
+import api from '~/services/api';
+
+export default function Actions({ searchItem, apiPath, loadSearch }) {
+  const { id } = searchItem;
   const [visible, setVisible] = useState(false);
 
   function handleToggleVisible() {
     setVisible(!visible);
+  }
+
+  async function handleDeleteItem() {
+    await api.delete(apiPath, { params: { idItem: id } });
+    loadSearch();
   }
 
   return (
@@ -30,7 +40,7 @@ export default function Actions() {
           <FaPen color="#4D85EE" size={15} />
           <span>Editar</span>
         </ActionItem>
-        <ActionItem>
+        <ActionItem onClick={handleDeleteItem}>
           <FaTrashAlt color="#DE3B3B" size={15} />
           <span>Excluir</span>
         </ActionItem>
@@ -38,3 +48,14 @@ export default function Actions() {
     </Container>
   );
 }
+
+Actions.propTypes = {
+  searchItem: PropTypes.shape().isRequired,
+  apiPath: PropTypes.string.isRequired,
+  loadSearch: PropTypes.shape().isRequired,
+  id: PropTypes.string,
+};
+
+Actions.defaultProps = {
+  id: '',
+};

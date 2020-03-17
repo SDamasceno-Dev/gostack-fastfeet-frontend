@@ -4,7 +4,7 @@
  */
 
 // Import dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
@@ -12,8 +12,6 @@ import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
 import RegisterActions from '~/components/RegisterActions';
 import Modal from '~/components/Modal';
-
-import api from '~/services/api';
 
 import {
   Container,
@@ -26,28 +24,23 @@ import {
   ListElement,
 } from './styles';
 
-export default function ListTemplate({ configList }) {
+export default function ListTemplate({
+  data,
+  configList,
+  loadSearch,
+  setQuery,
+}) {
   const { title, label, toolsBar, apiPath, inputPlaceholder } = configList;
   const loading = false;
 
-  const [search, setListSearch] = useState([]);
-  const [queryParam, setQuery] = useState();
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    async function loadSearch() {
-      const response = await api.get(apiPath, {
-        params: { q: queryParam },
-      });
-
-      setListSearch(response.data);
-    }
-    loadSearch();
-  }, [apiPath, queryParam]);
+  const [visible, setVisible] = useState(false);
 
   function handleQuerySearch({ query }) {
-    console.tron.log(query);
-    setQuery(query);
+    if (query) {
+      setQuery(query);
+    } else {
+      setQuery('');
+    }
   }
 
   function handleToggleVisible() {
@@ -86,7 +79,7 @@ export default function ListTemplate({ configList }) {
           ))}
         </ListHeader>
         <ListContent>
-          {search.map(srch => (
+          {data.map(srch => (
             <ListElement key={srch.id} colQtd={label.length}>
               <span>#{srch.id}</span>
               <span>{srch.recipient.name}</span>
@@ -94,7 +87,11 @@ export default function ListTemplate({ configList }) {
               <span>{srch.recipient.city}</span>
               <span>{srch.recipient.state}</span>
               <span>{srch.createdAt}</span>
-              <RegisterActions />
+              <RegisterActions
+                searchItem={srch}
+                apiPath={apiPath}
+                loadSearch={() => loadSearch()}
+              />
             </ListElement>
           ))}
         </ListContent>
@@ -111,4 +108,7 @@ ListTemplate.propTypes = {
     apiPath: PropTypes.string,
     inputPlaceholder: PropTypes.string,
   }).isRequired,
+  data: PropTypes.shape().isRequired,
+  loadSearch: PropTypes.func.isRequired,
+  setQuery: PropTypes.shape().isRequired,
 };
