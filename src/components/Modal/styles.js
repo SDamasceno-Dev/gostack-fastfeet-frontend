@@ -17,12 +17,20 @@ export const ModalWindow = styled.div`
   display: ${props => (props.visible ? 'block' : 'none')};
 
   div#window {
+    position: relative;
     align-self: auto;
     background: #fff;
     border-radius: 5px;
-    max-width: 1000px;
-    min-height: 400px;
+    max-width: 450px;
+    min-height: 360px;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 15%;
+
+    button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      border: 0;
+    }
   }
 `;

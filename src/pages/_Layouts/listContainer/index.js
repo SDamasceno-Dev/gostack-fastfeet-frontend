@@ -4,14 +4,13 @@
  */
 
 // Import dependencies
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
 import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
 import RegisterActions from '~/components/RegisterActions';
-import Modal from '~/components/Modal';
 
 import {
   Container,
@@ -33,8 +32,6 @@ export default function ListTemplate({
   const { title, label, toolsBar, apiPath, inputPlaceholder } = configList;
   const loading = false;
 
-  const [visible, setVisible] = useState(false);
-
   function handleQuerySearch({ query }) {
     if (query) {
       setQuery(query);
@@ -43,13 +40,8 @@ export default function ListTemplate({
     }
   }
 
-  function handleToggleVisible() {
-    setVisible(!visible);
-  }
-
   return (
     <Container>
-      <Modal visible={visible} showModal={() => handleToggleVisible()} />
       <div id="Title">
         <strong>{title}</strong>
       </div>
@@ -67,7 +59,7 @@ export default function ListTemplate({
             )}
           </BtnSearch>
         </Form>
-        <BtnRegister onClick={handleToggleVisible}>
+        <BtnRegister>
           <FaPlus color="#fff" size={14} />
           <span>CADASTRAR</span>
         </BtnRegister>
@@ -83,7 +75,10 @@ export default function ListTemplate({
             <ListElement key={srch.id} colQtd={label.length}>
               <span>#{srch.id}</span>
               <span>{srch.recipient.name}</span>
-              <span>{srch.courier.name}</span>
+              <span>
+                <img src={srch.courier.avatar.url} alt="" />
+                {srch.courier.name}
+              </span>
               <span>{srch.recipient.city}</span>
               <span>{srch.recipient.state}</span>
               <span>{srch.createdAt}</span>

@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import DelivFormRegister from '~/pages/Delivery/delivFormCreate';
+import { FaWindowClose } from 'react-icons/fa';
+
+import DelivView from '~/pages/Delivery/delivView';
 
 import { Container, ModalWindow } from './styles';
 
-export default function Modal({ visible, showModal }) {
+export default function Modal({ visible, showModal, delivData }) {
   return (
     <Container>
       <ModalWindow visible={visible}>
         <div id="window">
           <button type="button" onClick={showModal}>
-            123
+            <FaWindowClose color="#7d40e7" size={20} />
           </button>
-          <DelivFormRegister />
+          <DelivView itemData={delivData} />
         </div>
       </ModalWindow>
     </Container>

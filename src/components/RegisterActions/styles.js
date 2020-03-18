@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 export const ActionBtnMenu = styled.button`
@@ -15,8 +17,8 @@ export const ActionMenu = styled.div`
   width: 150px;
   height: 120px;
   padding: 17px 10px;
-  left: calc(50% - 90px);
-  top: calc(100% + 30px);
+  left: calc(50% - 75px);
+  top: calc(100% + 5px);
   background: #fff;
   border: 0;
   border-radius: 10px;
@@ -41,6 +43,8 @@ export const ActionMenu = styled.div`
 
 export const ActionItem = styled.button`
   display: flex;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
   border: 0;
   width: 100%;
@@ -53,6 +57,11 @@ export const ActionItem = styled.button`
     margin-top: 8px;
     padding-top: 8px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
   }
 
   svg {
