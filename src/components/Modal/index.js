@@ -7,7 +7,7 @@ import DelivView from '~/pages/Delivery/delivView';
 
 import { Container, ModalWindow } from './styles';
 
-export default function Modal({ visible, showModal, delivData }) {
+export default function Modal({ visible, showModal, data }) {
   return (
     <Container>
       <ModalWindow visible={visible}>
@@ -15,7 +15,7 @@ export default function Modal({ visible, showModal, delivData }) {
           <button type="button" onClick={showModal}>
             <FaWindowClose color="#7d40e7" size={20} />
           </button>
-          <DelivView itemData={delivData} />
+          <DelivView itemData={data} />
         </div>
       </ModalWindow>
     </Container>

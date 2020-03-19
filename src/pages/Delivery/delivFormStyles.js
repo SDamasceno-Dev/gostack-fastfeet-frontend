@@ -83,6 +83,7 @@ export const InputSelect = styled.select`
   margin-top: 10px;
   background: #fff;
   font-size: 16px;
+  padding-left: 15px;
 `;
 
 export const Input = styled.input`
@@ -91,4 +92,7 @@ export const Input = styled.input`
   margin-top: 10px;
   border: 1px solid #dddddd;
   border-radius: 4px;
+  font-size: 16px;
+  color: #999999;
+  padding-left: 15px;
 `;

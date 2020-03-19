@@ -5,12 +5,17 @@
 
 // Import dependencies
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { Form, Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
 import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
+import DelivList from '~/pages/Delivery/DelivList';
+
 import RegisterActions from '~/components/RegisterActions';
+import Badges from '~/components/Badges';
 
 import {
   Container,
@@ -24,19 +29,19 @@ import {
 } from './styles';
 
 export default function ListTemplate({
-  data,
   configList,
-  loadSearch,
-  setQuery,
+  searchData,
+  searchFunction,
+  searchQuery,
 }) {
   const { title, label, toolsBar, apiPath, inputPlaceholder } = configList;
   const loading = false;
 
   function handleQuerySearch({ query }) {
     if (query) {
-      setQuery(query);
+      searchQuery(query);
     } else {
-      setQuery('');
+      searchQuery('');
     }
   }
 
@@ -59,10 +64,19 @@ export default function ListTemplate({
             )}
           </BtnSearch>
         </Form>
-        <BtnRegister>
-          <FaPlus color="#fff" size={14} />
-          <span>CADASTRAR</span>
-        </BtnRegister>
+        <Link
+          to={{
+            pathname: 'deliveryfrm',
+            state: {
+              title: 'Cadastro de encomendas',
+            },
+          }}
+        >
+          <BtnRegister>
+            <FaPlus color="#fff" size={14} />
+            <span>CADASTRAR</span>
+          </BtnRegister>
+        </Link>
       </ToolsBar>
       <ListContainer>
         <ListHeader colQtd={label.length}>
@@ -70,26 +84,11 @@ export default function ListTemplate({
             <span key={lbl}>{lbl}</span>
           ))}
         </ListHeader>
-        <ListContent>
-          {data.map(srch => (
-            <ListElement key={srch.id} colQtd={label.length}>
-              <span>#{srch.id}</span>
-              <span>{srch.recipient.name}</span>
-              <span>
-                <img src={srch.courier.avatar.url} alt="" />
-                {srch.courier.name}
-              </span>
-              <span>{srch.recipient.city}</span>
-              <span>{srch.recipient.state}</span>
-              <span>{srch.createdAt}</span>
-              <RegisterActions
-                searchItem={srch}
-                apiPath={apiPath}
-                loadSearch={() => loadSearch()}
-              />
-            </ListElement>
-          ))}
-        </ListContent>
+        <DelivList
+          configList={configList}
+          searchData={searchData}
+          searchFunction={searchFunction}
+        />
       </ListContainer>
     </Container>
   );
@@ -103,7 +102,7 @@ ListTemplate.propTypes = {
     apiPath: PropTypes.string,
     inputPlaceholder: PropTypes.string,
   }).isRequired,
-  data: PropTypes.shape().isRequired,
-  loadSearch: PropTypes.func.isRequired,
-  setQuery: PropTypes.shape().isRequired,
+  searchData: PropTypes.shape().isRequired,
+  searchFunction: PropTypes.func.isRequired,
+  searchQuery: PropTypes.shape().isRequired,
 };

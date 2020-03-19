@@ -12,6 +12,7 @@ import api from '~/services/api';
 import ListTemplate from '~/pages/_Layouts/listContainer';
 
 export default function Delivery() {
+  const srch = null;
   const configList = {
     title: 'Gerenciando encomendas',
     label: [
@@ -26,32 +27,61 @@ export default function Delivery() {
     toolsBar: true,
     inputPlaceholder: 'Buscar por encomendas',
     apiPath: 'delivery',
+    ColumnsList: [
+      // <>
+      //   {searchData.map(srch => (
+      //     <ListElement key={srch.id} colQtd={label.length}>
+      //       <span>#{srch.id}</span>
+      //       <span>{srch.recipient.name}</span>
+      //       <span>
+      //         <img src={srch.courier.avatar.url} alt="" />
+      //         {srch.courier.name}
+      //       </span>
+      //       <span>{srch.recipient.city}</span>
+      //       <span>{srch.recipient.state}</span>
+      //       <span>
+      //         <Badges status={srch.status} />
+      //       </span>
+      //       <RegisterActions
+      //         searchItem={srch}
+      //         apiPath={apiPath}
+      //         searchFunction={() => searchFunction()}
+      //       />
+      //     </ListElement>
+      //   ))}
+      //   <RegisterActions
+      //     searchItem={srch}
+      //     apiPath={apiPath}
+      //     searchFunction={() => searchFunction()}
+      //   />
+      // </>,
+    ],
   };
 
   const [search, setListSearch] = useState([]);
   const [query, setQuery] = useState();
 
-  async function loadSearch(q) {
+  async function searchDeliv(q) {
     try {
       const response = await api.get('delivery', {
         params: { q },
       });
       setListSearch(response.data);
     } catch (err) {
-      console.tron.log(err);
+      alert('Erro!');
     }
   }
 
   useEffect(() => {
-    loadSearch(query);
+    searchDeliv(query);
   }, [query]);
 
   return (
     <ListTemplate
       configList={configList}
-      data={search}
-      loadSearch={() => loadSearch()}
-      setQuery={setQuery}
+      searchData={search}
+      searchFunction={() => searchDeliv()}
+      searchQuery={setQuery}
     />
   );
 }

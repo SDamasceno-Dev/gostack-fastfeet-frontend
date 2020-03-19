@@ -16,8 +16,8 @@ import { Container, ActionBtnMenu, ActionMenu, ActionItem } from './styles';
 
 import api from '~/services/api';
 
-export default function Actions({ searchItem, apiPath, loadSearch }) {
-  const { id } = searchItem;
+export default function Actions({ searchItem, apiPath, searchFunction }) {
+  const { id, product, recipient_id, courier_id } = searchItem;
   const [visible, setVisible] = useState(false);
   const [modVisible, setModVisible] = useState(false);
 
@@ -30,8 +30,11 @@ export default function Actions({ searchItem, apiPath, loadSearch }) {
   }
 
   async function handleDeleteItem() {
-    await api.delete(apiPath, { params: { idItem: id } });
-    loadSearch();
+    const click = window.confirm('Deseja realmente excluir o registro?');
+    if (click) {
+      await api.delete(apiPath, { params: { idItem: id } });
+      searchFunction();
+    }
   }
 
   return (
@@ -39,7 +42,7 @@ export default function Actions({ searchItem, apiPath, loadSearch }) {
       <Modal
         visible={modVisible}
         showModal={() => handleToggleModVisible()}
-        delivData={searchItem}
+        data={searchItem}
       />
       <ActionBtnMenu type="ActionBtnMenu" onClick={handleToggleVisible}>
         <FaEllipsisH color="#C6C6C6" size={15} />
@@ -53,7 +56,10 @@ export default function Actions({ searchItem, apiPath, loadSearch }) {
           <Link
             to={{
               pathname: 'deliveryfrm',
-              state: { thing: 'fdsa' },
+              state: {
+                data: { product, recipient_id, courier_id },
+                title: 'Edição de encomendas',
+              },
             }}
           >
             <FaPen color="#4D85EE" size={13} />
@@ -72,7 +78,7 @@ export default function Actions({ searchItem, apiPath, loadSearch }) {
 Actions.propTypes = {
   searchItem: PropTypes.shape().isRequired,
   apiPath: PropTypes.string.isRequired,
-  loadSearch: PropTypes.shape().isRequired,
+  searchFunction: PropTypes.shape().isRequired,
   id: PropTypes.string,
 };
 
