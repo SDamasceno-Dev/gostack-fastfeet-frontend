@@ -13,9 +13,7 @@ import PropTypes from 'prop-types';
 import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
 import DelivList from '~/pages/Delivery/DelivList';
-
-import RegisterActions from '~/components/RegisterActions';
-import Badges from '~/components/Badges';
+import CourierList from '~/pages/Courier/CourierList';
 
 import {
   Container,
@@ -24,8 +22,6 @@ import {
   BtnRegister,
   ListContainer,
   ListHeader,
-  ListContent,
-  ListElement,
 } from './styles';
 
 export default function ListTemplate({
@@ -34,7 +30,7 @@ export default function ListTemplate({
   searchFunction,
   searchQuery,
 }) {
-  const { title, label, toolsBar, apiPath, inputPlaceholder } = configList;
+  const { title, label, toolsBar, inputPlaceholder, switchParam } = configList;
   const loading = false;
 
   function handleQuerySearch({ query }) {
@@ -42,6 +38,29 @@ export default function ListTemplate({
       searchQuery(query);
     } else {
       searchQuery('');
+    }
+  }
+
+  function switchList(listComponent) {
+    switch (listComponent) {
+      case 'delivery':
+        return (
+          <DelivList
+            configList={configList}
+            searchData={searchData}
+            searchFunction={searchFunction}
+          />
+        );
+      case 'courier':
+        return (
+          <CourierList
+            configList={configList}
+            searchData={searchData}
+            searchFunction={searchFunction}
+          />
+        );
+      default:
+        return null;
     }
   }
 
@@ -84,11 +103,7 @@ export default function ListTemplate({
             <span key={lbl}>{lbl}</span>
           ))}
         </ListHeader>
-        <DelivList
-          configList={configList}
-          searchData={searchData}
-          searchFunction={searchFunction}
-        />
+        {switchList(switchParam)}
       </ListContainer>
     </Container>
   );

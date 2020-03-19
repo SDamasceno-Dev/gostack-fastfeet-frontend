@@ -16,7 +16,12 @@ import { Container, ActionBtnMenu, ActionMenu, ActionItem } from './styles';
 
 import api from '~/services/api';
 
-export default function Actions({ searchItem, apiPath, searchFunction }) {
+export default function Actions({
+  searchItem,
+  apiPath,
+  searchFunction,
+  switchActionParams,
+}) {
   const { id, product, recipient_id, courier_id } = searchItem;
   const [visible, setVisible] = useState(false);
   const [modVisible, setModVisible] = useState(false);
@@ -37,6 +42,63 @@ export default function Actions({ searchItem, apiPath, searchFunction }) {
     }
   }
 
+  function switchActionsButtons(switchButtons) {
+    switch (switchButtons) {
+      case 'delivery':
+        return (
+          <ActionMenu visible={visible}>
+            <ActionItem onClick={handleToggleModVisible}>
+              <FaEye color="#8E5BE8" size={15} />
+              <span>Visualizar</span>
+            </ActionItem>
+            <ActionItem>
+              <Link
+                to={{
+                  pathname: 'deliveryfrm',
+                  state: {
+                    data: { product, recipient_id, courier_id },
+                    title: 'Edição de encomendas',
+                  },
+                }}
+              >
+                <FaPen color="#4D85EE" size={13} />
+                <span>Editar</span>
+              </Link>
+            </ActionItem>
+            <ActionItem onClick={handleDeleteItem}>
+              <FaTrashAlt color="#DE3B3B" size={15} />
+              <span>Excluir</span>
+            </ActionItem>
+          </ActionMenu>
+        );
+      case 'courier':
+        return (
+          <ActionMenu visible={visible}>
+            <ActionItem>
+              <Link
+                to={{
+                  pathname: '',
+                  state: {
+                    data: { product, recipient_id, courier_id },
+                    title: 'Edição de entregadores',
+                  },
+                }}
+              >
+                <FaPen color="#4D85EE" size={13} />
+                <span>Editar</span>
+              </Link>
+            </ActionItem>
+            <ActionItem onClick={handleDeleteItem}>
+              <FaTrashAlt color="#DE3B3B" size={15} />
+              <span>Excluir</span>
+            </ActionItem>
+          </ActionMenu>
+        );
+      default:
+        return null;
+    }
+  }
+
   return (
     <Container>
       <Modal
@@ -47,30 +109,7 @@ export default function Actions({ searchItem, apiPath, searchFunction }) {
       <ActionBtnMenu type="ActionBtnMenu" onClick={handleToggleVisible}>
         <FaEllipsisH color="#C6C6C6" size={15} />
       </ActionBtnMenu>
-      <ActionMenu visible={visible}>
-        <ActionItem onClick={handleToggleModVisible}>
-          <FaEye color="#8E5BE8" size={15} />
-          <span>Visualizar</span>
-        </ActionItem>
-        <ActionItem>
-          <Link
-            to={{
-              pathname: 'deliveryfrm',
-              state: {
-                data: { product, recipient_id, courier_id },
-                title: 'Edição de encomendas',
-              },
-            }}
-          >
-            <FaPen color="#4D85EE" size={13} />
-            <span>Editar</span>
-          </Link>
-        </ActionItem>
-        <ActionItem onClick={handleDeleteItem}>
-          <FaTrashAlt color="#DE3B3B" size={15} />
-          <span>Excluir</span>
-        </ActionItem>
-      </ActionMenu>
+      {switchActionsButtons(switchActionParams)}
     </Container>
   );
 }

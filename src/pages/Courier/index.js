@@ -1,8 +1,9 @@
 /**
  * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
- * @description: Page specific to show informarion about Courier
+ * @description: Page specific to show information about Courier
  */
 
+// Import dependencies
 import React, { useEffect, useState } from 'react';
 
 import api from '~/services/api';
@@ -12,11 +13,12 @@ import ListTemplate from '~/pages/_Layouts/listContainer';
 
 export default function Courier() {
   const configList = {
-    title: 'Gerenciando encomendas',
+    title: 'Gerenciando entregadores',
     label: ['ID', 'Foto', 'Nome', 'EMail', 'Ações'],
     toolsBar: true,
     inputPlaceholder: 'Buscar por entregadores',
     apiPath: 'courier',
+    switchParam: 'courier',
   };
 
   const [search, setListSearch] = useState([]);
@@ -28,21 +30,21 @@ export default function Courier() {
         params: { q },
       });
       setListSearch(response.data);
-    } catch (err) {}
+    } catch (err) {
+      alert('Erro Banco de dados - Courier!');
+    }
   }
 
   useEffect(() => {
     searchCourier(query);
   }, [query]);
 
-  console.tron.log('courier');
-
   return (
     <ListTemplate
       configList={configList}
-      componentList={search}
+      searchData={search}
       searchFunction={() => searchCourier()}
-      setQuery={setQuery}
+      searchQuery={setQuery}
     />
   );
 }

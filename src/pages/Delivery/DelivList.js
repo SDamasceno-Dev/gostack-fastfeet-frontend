@@ -27,6 +27,7 @@ export default function DelivList({ configList, searchData, searchFunction }) {
             searchItem={srch}
             apiPath={apiPath}
             searchFunction={() => searchFunction()}
+            switchActionParams="delivery"
           />
         </ListElement>
       ))}
