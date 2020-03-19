@@ -36,9 +36,14 @@ export default function Actions({
 
   async function handleDeleteItem() {
     const click = window.confirm('Deseja realmente excluir o registro?');
-    if (click) {
-      await api.delete(apiPath, { params: { idItem: id } });
-      searchFunction();
+    try {
+      if (click) {
+        await api.delete(apiPath, { params: { idItem: id } });
+        searchFunction();
+      }
+    } catch (err) {
+      alert(err);
+      console.tron.log(err);
     }
   }
 
@@ -47,6 +52,11 @@ export default function Actions({
       case 'delivery':
         return (
           <ActionMenu visible={visible}>
+            <Modal
+              visible={modVisible}
+              showModal={() => handleToggleModVisible()}
+              data={searchItem}
+            />
             <ActionItem onClick={handleToggleModVisible}>
               <FaEye color="#8E5BE8" size={15} />
               <span>Visualizar</span>
@@ -54,7 +64,7 @@ export default function Actions({
             <ActionItem>
               <Link
                 to={{
-                  pathname: 'deliveryfrm',
+                  pathname: 'delivery/deliveryfrm',
                   state: {
                     data: { product, recipient_id, courier_id },
                     title: 'Edição de encomendas',
@@ -77,10 +87,33 @@ export default function Actions({
             <ActionItem>
               <Link
                 to={{
-                  pathname: '',
+                  pathname: 'courier/courierfrm',
                   state: {
                     data: { product, recipient_id, courier_id },
                     title: 'Edição de entregadores',
+                  },
+                }}
+              >
+                <FaPen color="#4D85EE" size={13} />
+                <span>Editar</span>
+              </Link>
+            </ActionItem>
+            <ActionItem onClick={handleDeleteItem}>
+              <FaTrashAlt color="#DE3B3B" size={15} />
+              <span>Excluir</span>
+            </ActionItem>
+          </ActionMenu>
+        );
+      case 'recipient':
+        return (
+          <ActionMenu visible={visible}>
+            <ActionItem>
+              <Link
+                to={{
+                  pathname: 'recipient/recipientfrm',
+                  state: {
+                    data: { product, recipient_id, courier_id },
+                    title: 'Edição de destinatário',
                   },
                 }}
               >
@@ -101,11 +134,6 @@ export default function Actions({
 
   return (
     <Container>
-      <Modal
-        visible={modVisible}
-        showModal={() => handleToggleModVisible()}
-        data={searchItem}
-      />
       <ActionBtnMenu type="ActionBtnMenu" onClick={handleToggleVisible}>
         <FaEllipsisH color="#C6C6C6" size={15} />
       </ActionBtnMenu>
@@ -117,8 +145,9 @@ export default function Actions({
 Actions.propTypes = {
   searchItem: PropTypes.shape().isRequired,
   apiPath: PropTypes.string.isRequired,
-  searchFunction: PropTypes.shape().isRequired,
+  searchFunction: PropTypes.func.isRequired,
   id: PropTypes.string,
+  switchActionParams: PropTypes.string.isRequired,
 };
 
 Actions.defaultProps = {

@@ -1,35 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Select from 'react-select/async';
+import AsyncSelect from 'react-select/async';
 
 import { Link } from 'react-router-dom';
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
-import { Container, FormElement, Input } from './delivFormStyles';
+import { Container, FormElement, Input } from './recipientFormStyles';
 
 export default function DelivForm(props) {
   const dataItem = props.location.state;
   const { title } = dataItem;
-  const { product } = dataItem.data;
+  // const { product } = dataItem.data;
 
-  function courierList(query) {
-    return api
-      .get('courier', { params: { q: query } })
-      .then(response => {
-        const options = response.data.map(courier => ({
-          value: courier.id,
-          label: courier.name,
+  const [recipientList, setRecipientList] = useState([]);
+
+  async function loadRecipient(query) {
+    try {
+      await api.get('recipient', { params: { q: query } }).then(response => {
+        const options = response.data.map(recipient => ({
+          value: recipient.id,
+          label: recipient.name,
         }));
-        return options;
-      })
-      .catch(error => {
-        console.tron.log(error);
+        setRecipientList(options);
       });
+    } catch (err) {
+      alert('Erro ao carregar a lista!');
+    }
   }
 
-  console.tron.log(courierList);
+  useEffect(() => {
+    loadRecipient();
+  }, []);
+
+  // Fill Selects with data
+
+  const filterRecipient = inputValue => {
+    return recipientList.filter(i =>
+      i.label.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  };
+
+  const promiseOptionsRecipient = inputValue =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        resolve(filterRecipient(inputValue));
+      }, 1000);
+    });
 
   return (
     <Container>
@@ -52,31 +70,25 @@ export default function DelivForm(props) {
         <div>
           <FormElement>
             <strong>Destinatário</strong>
-            <Select
-              id="recipientSelect"
-              name="courier_id"
+            <AsyncSelect
               cacheOptions
               defaultOptions
-              loadOptions={courierList}
+              loadOptions={promiseOptionsRecipient}
             />
           </FormElement>
           <FormElement>
             <strong>Entregador</strong>
-            <Select
-              id="courierSelect"
-              name="courier_id"
+            <AsyncSelect
               cacheOptions
               defaultOptions
-              loadOptions={courierList}
+              // loadOptions={promiseOptionsCourier}
             />
           </FormElement>
         </div>
         <div>
           <FormElement>
             <strong>Nome do produto</strong>
-            <div>
-              <Input value={product} />
-            </div>
+            <div>{/* <Input value={product} /> */}</div>
           </FormElement>
         </div>
       </div>

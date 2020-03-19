@@ -15,7 +15,6 @@ export const ActionBtnMenu = styled.button`
 export const ActionMenu = styled.div`
   position: absolute;
   width: 150px;
-  height: 120px;
   padding: 17px 10px;
   left: calc(50% - 75px);
   top: calc(100% + 5px);

@@ -1,6 +1,6 @@
 /**
  * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
- * @description: Page specific to show informarion about Delivery
+ * @description: Page specific to show information about Delivery
  */
 
 // Import dependencies

@@ -14,6 +14,7 @@ import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
 import DelivList from '~/pages/Delivery/DelivList';
 import CourierList from '~/pages/Courier/CourierList';
+import RecipientList from '~/pages/Recipient/RecipientList';
 
 import {
   Container,
@@ -59,6 +60,14 @@ export default function ListTemplate({
             searchFunction={searchFunction}
           />
         );
+      case 'recipient':
+        return (
+          <RecipientList
+            configList={configList}
+            searchData={searchData}
+            searchFunction={searchFunction}
+          />
+        );
       default:
         return null;
     }
@@ -75,7 +84,7 @@ export default function ListTemplate({
             <FaSearch color="#999999" size={14} />
             <Input name="query" placeholder={inputPlaceholder} />
           </div>
-          <BtnSearch loading={loading}>
+          <BtnSearch loading={loading ? 1 : 0}>
             {loading ? (
               <FaSpinner color="#fff" size={14} />
             ) : (
@@ -85,9 +94,9 @@ export default function ListTemplate({
         </Form>
         <Link
           to={{
-            pathname: 'deliveryfrm',
+            pathname: 'recipientfrm',
             state: {
-              title: 'Cadastro de encomendas',
+              title: 'Cadastro de destinatários',
             },
           }}
         >
@@ -100,7 +109,9 @@ export default function ListTemplate({
       <ListContainer>
         <ListHeader colQtd={label.length}>
           {label.map(lbl => (
-            <span key={lbl}>{lbl}</span>
+            <span key={lbl} className={lbl === 'Foto' ? 'center' : ''}>
+              {lbl}
+            </span>
           ))}
         </ListHeader>
         {switchList(switchParam)}
@@ -116,8 +127,11 @@ ListTemplate.propTypes = {
     toolsBar: PropTypes.bool,
     apiPath: PropTypes.string,
     inputPlaceholder: PropTypes.string,
+    switchParam: PropTypes.string,
   }).isRequired,
-  searchData: PropTypes.shape().isRequired,
+  searchData: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array])
+  ).isRequired,
   searchFunction: PropTypes.func.isRequired,
-  searchQuery: PropTypes.shape().isRequired,
+  searchQuery: PropTypes.func.isRequired,
 };

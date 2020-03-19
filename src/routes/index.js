@@ -12,7 +12,9 @@ import SignIn from '../pages/SignIn';
 import Delivery from '../pages/Delivery';
 import DeliveryFrm from '../pages/Delivery/delivForm';
 import Courier from '../pages/Courier';
+import CourierFrm from '../pages/Courier/courierForm';
 import Recipient from '../pages/Recipient';
+import RecipientFrm from '../pages/Recipient/recipientForm';
 import DeliveryProblem from '../pages/DeliveryProblem';
 
 export default function Routes() {
@@ -21,9 +23,15 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
 
       <Route path="/delivery" exact component={Delivery} isPrivate />
-      <Route path="/deliveryfrm" exact component={DeliveryFrm} isPrivate />
-      <Route path="/courier" component={Courier} isPrivate />
-      <Route path="/recipient" component={Recipient} isPrivate />
+      <Route path="/delivery/deliveryfrm" component={DeliveryFrm} isPrivate />
+      <Route path="/courier" exact component={Courier} isPrivate />
+      <Route path="/courier/courierfrm" component={CourierFrm} isPrivate />
+      <Route path="/recipient" exact component={Recipient} isPrivate />
+      <Route
+        path="/recipient/recipientfrm"
+        component={RecipientFrm}
+        isPrivate
+      />
       <Route path="/problem" component={DeliveryProblem} isPrivate />
 
       <Route path="/" component={() => <h1>404</h1>} />

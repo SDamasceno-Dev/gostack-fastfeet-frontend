@@ -25,4 +25,7 @@ export default function Modal({ visible, showModal, data }) {
 Modal.propTypes = {
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  ).isRequired,
 };

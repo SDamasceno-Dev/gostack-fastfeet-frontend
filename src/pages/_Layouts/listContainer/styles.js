@@ -106,6 +106,10 @@ export const ListHeader = styled.div`
     color: #444444;
     text-align: ${props => props.key};
   }
+
+  span.center {
+    margin: 0 auto;
+  }
 `;
 
 export const ListContent = styled.div`

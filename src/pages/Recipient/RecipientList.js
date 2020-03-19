@@ -1,16 +1,11 @@
-/**
- * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
- * @description: List component para Courier Page
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import RegisterActions from '~/components/RegisterActions';
 
-import { ListContent, ListElement } from './CourierListStyles';
+import { ListContent, ListElement } from './RecipientListStyles';
 
-export default function CourierList({
+export default function RecipientList({
   configList,
   searchData,
   searchFunction,
@@ -22,14 +17,13 @@ export default function CourierList({
       {searchData.map(srch => (
         <ListElement key={srch.id} colQtd={label.length}>
           <span>#{srch.id}</span>
-          <img src={srch.avatar.url} alt="" />
           <span>{srch.name}</span>
-          <span>{srch.email}</span>
+          <span>{`${srch.street}, ${srch.number}, ${srch.city} - ${srch.state} `}</span>
           <RegisterActions
             searchItem={srch}
             apiPath={apiPath}
             searchFunction={() => searchFunction()}
-            switchActionParams="courier"
+            switchActionParams="recipient"
           />
         </ListElement>
       ))}
@@ -37,7 +31,7 @@ export default function CourierList({
   );
 }
 
-CourierList.propTypes = {
+RecipientList.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,
     label: PropTypes.array,
