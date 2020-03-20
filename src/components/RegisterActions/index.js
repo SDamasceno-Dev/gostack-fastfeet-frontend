@@ -23,6 +23,8 @@ export default function Actions({
   switchActionParams,
 }) {
   const { id, product, recipient_id, courier_id } = searchItem;
+  const { name: recipient_name } = searchItem.recipient;
+  const { name: courier_name } = searchItem.courier;
   const [visible, setVisible] = useState(false);
   const [modVisible, setModVisible] = useState(false);
 
@@ -66,7 +68,14 @@ export default function Actions({
                 to={{
                   pathname: 'delivery/deliveryfrm',
                   state: {
-                    data: { product, recipient_id, courier_id },
+                    data: {
+                      id,
+                      product,
+                      recipient_id,
+                      courier_id,
+                      recipient_name,
+                      courier_name,
+                    },
                     title: 'Edição de encomendas',
                   },
                 }}
@@ -89,7 +98,13 @@ export default function Actions({
                 to={{
                   pathname: 'courier/courierfrm',
                   state: {
-                    data: { product, recipient_id, courier_id },
+                    data: {
+                      product,
+                      recipient_id,
+                      courier_id,
+                      recipient_name,
+                      courier_name,
+                    },
                     title: 'Edição de entregadores',
                   },
                 }}

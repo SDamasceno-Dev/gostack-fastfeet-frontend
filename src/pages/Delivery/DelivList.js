@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import RegisterActions from '~/components/RegisterActions';
 import Badges from '~/components/Badges';
@@ -12,6 +13,7 @@ export default function DelivList({ configList, searchData, searchFunction }) {
     <ListContent>
       {searchData.map(srch => (
         <ListElement key={srch.id} colQtd={label.length}>
+          {console.tron.log('DelivList', srch)}
           <span>#{srch.id}</span>
           <span>{srch.recipient.name}</span>
           <span>
@@ -34,3 +36,14 @@ export default function DelivList({ configList, searchData, searchFunction }) {
     </ListContent>
   );
 }
+
+DelivList.propTypes = {
+  configList: PropTypes.arrayOf([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array,
+  ]).isRequired,
+  searchData: PropTypes.arrayOf([PropTypes.string, PropTypes.number])
+    .isRequired,
+  searchFunction: PropTypes.func.isRequired,
+};

@@ -39,7 +39,7 @@ export default function Delivery() {
       });
       setListSearch(response.data);
     } catch (err) {
-      alert('Erro 2!');
+      console.tron.log(err);
     }
   }
 
