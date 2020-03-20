@@ -1,3 +1,8 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description:
+ */
+
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AsyncSelect from 'react-select/async';
@@ -7,7 +12,7 @@ import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
-import { Container, FormElement, Input } from './recipientFormStyles';
+import { Container, FormElement } from './recipientFormStyles';
 
 export default function DelivForm(props) {
   const dataItem = props.location.state;

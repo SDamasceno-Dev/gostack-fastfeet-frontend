@@ -1,3 +1,8 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: List component para Delivery Page
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 

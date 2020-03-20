@@ -22,9 +22,6 @@ export default function Actions({
   searchFunction,
   switchActionParams,
 }) {
-  const { id, product, recipient_id, courier_id } = searchItem;
-  const { name: recipient_name } = searchItem.recipient;
-  const { name: courier_name } = searchItem.courier;
   const [visible, setVisible] = useState(false);
   const [modVisible, setModVisible] = useState(false);
 
@@ -40,7 +37,7 @@ export default function Actions({
     const click = window.confirm('Deseja realmente excluir o registro?');
     try {
       if (click) {
-        await api.delete(apiPath, { params: { idItem: id } });
+        await api.delete(apiPath, { params: { idItem: searchItem.id } });
         searchFunction();
       }
     } catch (err) {
@@ -69,12 +66,12 @@ export default function Actions({
                   pathname: 'delivery/deliveryfrm',
                   state: {
                     data: {
-                      id,
-                      product,
-                      recipient_id,
-                      courier_id,
-                      recipient_name,
-                      courier_name,
+                      id: searchItem.id,
+                      product: searchItem.product,
+                      recipient_id: searchItem.recipient_id,
+                      courier_id: searchItem.courier_id,
+                      recipient_name: searchItem.recipient.name,
+                      courier_name: searchItem.courier.name,
                     },
                     title: 'Edição de encomendas',
                   },
@@ -99,11 +96,7 @@ export default function Actions({
                   pathname: 'courier/courierfrm',
                   state: {
                     data: {
-                      product,
-                      recipient_id,
-                      courier_id,
-                      recipient_name,
-                      courier_name,
+                      id: searchItem.id,
                     },
                     title: 'Edição de entregadores',
                   },
@@ -127,7 +120,11 @@ export default function Actions({
                 to={{
                   pathname: 'recipient/recipientfrm',
                   state: {
-                    data: { product, recipient_id, courier_id },
+                    data: {
+                      product: searchItem.product,
+                      recipient_id: searchItem.recipient_id,
+                      courier_id: searchItem.courier_id,
+                    },
                     title: 'Edição de destinatário',
                   },
                 }}
