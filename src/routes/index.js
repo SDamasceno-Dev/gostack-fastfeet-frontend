@@ -32,7 +32,7 @@ export default function Routes() {
         component={RecipientFrm}
         isPrivate
       />
-      <Route path="/problem" component={DeliveryProblem} isPrivate />
+      <Route path="/delivery/problem" component={DeliveryProblem} isPrivate />
 
       <Route path="/" component={() => <h1>404</h1>} />
     </Switch>

@@ -13,7 +13,6 @@ export default function DelivList({ configList, searchData, searchFunction }) {
     <ListContent>
       {searchData.map(srch => (
         <ListElement key={srch.id} colQtd={label.length}>
-          {console.tron.log('DelivList', srch)}
           <span>#{srch.id}</span>
           <span>{srch.recipient.name}</span>
           <span>

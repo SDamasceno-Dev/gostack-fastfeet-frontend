@@ -71,15 +71,27 @@ export default function DelivForm(props) {
   }
 
   async function recordDelivForm() {
-    try {
-      await api.put('delivery', {
-        id,
-        product: input,
-        recipient_id: recipSelected[0],
-        courier_id: courierSelected[0],
-      });
-    } catch (err) {
-      console.tron.log(err);
+    if (id === '') {
+      try {
+        await api.post('delivery', {
+          product: input,
+          recipient_id: recipSelected[0],
+          courier_id: courierSelected[0],
+        });
+      } catch (err) {
+        console.tron.log(err);
+      }
+    } else {
+      try {
+        await api.put('delivery', {
+          id,
+          product: input,
+          recipient_id: recipSelected[0],
+          courier_id: courierSelected[0],
+        });
+      } catch (err) {
+        console.tron.log(err);
+      }
     }
   }
 
@@ -145,7 +157,6 @@ export default function DelivForm(props) {
                 name="productName"
                 defaultValue={product}
               />
-              {console.tron.log()}
             </div>
           </FormElement>
         </div>

@@ -33,6 +33,12 @@ export default function ListTemplate({
 }) {
   const { title, label, toolsBar, inputPlaceholder, switchParam } = configList;
   const loading = false;
+  const id = '';
+  const product = '';
+  const recipient_id = '';
+  const courier_id = '';
+  const recipient_name = '';
+  const courier_name = '';
 
   function handleQuerySearch({ query }) {
     if (query) {
@@ -73,6 +79,40 @@ export default function ListTemplate({
     }
   }
 
+  function switchBtnRegister(param) {
+    switch (param) {
+      case 'delivery':
+        return {
+          pathname: 'delivery/deliveryfrm',
+          state: {
+            title: 'Cadastro de encomendas',
+            data: {
+              id,
+              product,
+              recipient_id,
+              courier_id,
+              recipient_name,
+              courier_name,
+            },
+          },
+        };
+      case 'courier':
+        return {
+          pathname: 'courier/courierfrm',
+          state: {
+            title: 'Cadastro de encomendas',
+          },
+        };
+      default:
+        return {
+          pathname: 'recipient/recipientfrm',
+          state: {
+            title: 'Cadastro de encomendas',
+          },
+        };
+    }
+  }
+
   return (
     <Container>
       <div id="Title">
@@ -92,14 +132,7 @@ export default function ListTemplate({
             )}
           </BtnSearch>
         </Form>
-        <Link
-          to={{
-            pathname: 'recipientfrm',
-            state: {
-              title: 'Cadastro de destinatários',
-            },
-          }}
-        >
+        <Link to={switchBtnRegister(switchParam)}>
           <BtnRegister>
             <FaPlus color="#fff" size={14} />
             <span>CADASTRAR</span>
