@@ -37,6 +37,7 @@ export default function Actions({
     const click = window.confirm('Deseja realmente excluir o registro?');
     try {
       if (click) {
+        console.tron.log(searchItem.id);
         await api.delete(apiPath, { params: { idItem: searchItem.id } });
         searchFunction();
       }
@@ -97,6 +98,10 @@ export default function Actions({
                   state: {
                     data: {
                       id: searchItem.id,
+                      name: searchItem.name,
+                      email: searchItem.email,
+                      avatar_id: searchItem.avatar_id,
+                      avatar_url: searchItem.avatar.url,
                     },
                     title: 'Edição de entregadores',
                   },

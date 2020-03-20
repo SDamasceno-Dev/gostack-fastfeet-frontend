@@ -39,6 +39,7 @@ export default function ListTemplate({
   const courier_id = '';
   const recipient_name = '';
   const courier_name = '';
+  const avatar_id = '';
 
   function handleQuerySearch({ query }) {
     if (query) {
@@ -100,7 +101,12 @@ export default function ListTemplate({
         return {
           pathname: 'courier/courierfrm',
           state: {
-            title: 'Cadastro de encomendas',
+            title: 'Cadastro de entregadores',
+            data: {
+              name: '',
+              email: '',
+              avatar_id: '',
+            },
           },
         };
       default:

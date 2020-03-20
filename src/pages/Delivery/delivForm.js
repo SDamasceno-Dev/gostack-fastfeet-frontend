@@ -55,13 +55,6 @@ export default function DelivForm(props) {
   const [recipSelected, setRecip] = useState([recipient_id, recipient_name]);
   const [courierSelected, setCourier] = useState([courier_id, courier_name]);
   const [input, setInput] = useState(product);
-  console.tron.log(
-    'verificação',
-    id,
-    input,
-    recipSelected[0],
-    courierSelected[0]
-  );
   function viewRecipChange(optionSelected) {
     setRecip([optionSelected.value, optionSelected.label]);
   }

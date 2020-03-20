@@ -12,7 +12,7 @@ import SignIn from '../pages/SignIn';
 import Delivery from '../pages/Delivery';
 import DeliveryFrm from '../pages/Delivery/delivForm';
 import Courier from '../pages/Courier';
-import CourierFrm from '../pages/Courier/courierForm';
+import CourierFrm from '../pages/Courier/CourierForm';
 import Recipient from '../pages/Recipient';
 import RecipientFrm from '../pages/Recipient/recipientForm';
 import DeliveryProblem from '../pages/DeliveryProblem';

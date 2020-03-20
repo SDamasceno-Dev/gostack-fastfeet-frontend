@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="103" height="60.643" viewBox="0 0 103 60.643">
+  <g id="Group_23" data-name="Group 23" transform="translate(-669 -222.357)">
+    <path id="ic_insert_photo_24px" d="M42.643,38.238V7.4a4.418,4.418,0,0,0-4.4-4.4H7.4A4.418,4.418,0,0,0,3,7.4V38.238a4.418,4.418,0,0,0,4.4,4.4H38.238A4.418,4.418,0,0,0,42.643,38.238ZM15.113,26.125l5.506,6.629,7.708-9.933,9.911,13.214H7.4Z" transform="translate(697 219.357)" fill="#ddd"/>
+    <text id="Adicionar_foto" data-name="Adicionar foto" transform="translate(669 279)" fill="#ddd" font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">Adicionar foto</tspan></text>
+  </g>
+</svg>
