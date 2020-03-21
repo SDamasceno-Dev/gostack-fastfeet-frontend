@@ -33,13 +33,6 @@ export default function ListTemplate({
 }) {
   const { title, label, toolsBar, inputPlaceholder, switchParam } = configList;
   const loading = false;
-  const id = '';
-  const product = '';
-  const recipient_id = '';
-  const courier_id = '';
-  const recipient_name = '';
-  const courier_name = '';
-  const avatar_id = '';
 
   function handleQuerySearch({ query }) {
     if (query) {
@@ -88,12 +81,12 @@ export default function ListTemplate({
           state: {
             title: 'Cadastro de encomendas',
             data: {
-              id,
-              product,
-              recipient_id,
-              courier_id,
-              recipient_name,
-              courier_name,
+              id: '',
+              product: '',
+              recipient_id: '',
+              courier_id: '',
+              recipient_name: '',
+              courier_name: '',
             },
           },
         };
@@ -113,7 +106,17 @@ export default function ListTemplate({
         return {
           pathname: 'recipient/recipientfrm',
           state: {
-            title: 'Cadastro de encomendas',
+            title: 'Cadastro de destinatário',
+            data: {
+              id: '',
+              name: '',
+              street: '',
+              number: '',
+              complement: '',
+              city: '',
+              state: '',
+              zipcode: '',
+            },
           },
         };
     }

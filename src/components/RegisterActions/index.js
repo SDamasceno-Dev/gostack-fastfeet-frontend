@@ -37,13 +37,17 @@ export default function Actions({
     const click = window.confirm('Deseja realmente excluir o registro?');
     try {
       if (click) {
-        console.tron.log(searchItem.id);
         await api.delete(apiPath, { params: { idItem: searchItem.id } });
         searchFunction();
       }
-    } catch (err) {
-      alert(err);
-      console.tron.log(err);
+    } catch (error) {
+      if (error.response) {
+        alert(
+          `DELETE IS NOT POSSIBLE\n${JSON.stringify(error.response.data.error)}`
+        );
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      }
     }
   }
 
@@ -125,11 +129,7 @@ export default function Actions({
                 to={{
                   pathname: 'recipient/recipientfrm',
                   state: {
-                    data: {
-                      product: searchItem.product,
-                      recipient_id: searchItem.recipient_id,
-                      courier_id: searchItem.courier_id,
-                    },
+                    data: { id: searchItem.id, searchItem },
                     title: 'Edição de destinatário',
                   },
                 }}

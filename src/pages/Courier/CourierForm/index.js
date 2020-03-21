@@ -3,23 +3,22 @@
  * @description:
  */
 
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
-
 import { Link } from 'react-router-dom';
+
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
 import AvatarInput from '~/pages/Courier/AvatarInput';
 
-import { Container } from './styles.js';
+import { Container } from './styles';
 
 export default function CourierProfile(props) {
   const dataItem = props.location.state;
   const { title } = dataItem;
-  const { id, name, email } = dataItem.data;
+  const { id } = dataItem.data;
 
   async function regCourier(data) {
     try {
@@ -98,15 +97,3 @@ export default function CourierProfile(props) {
     </Container>
   );
 }
-
-CourierProfile.defaultProps = {
-  state: {
-    data: {
-      id: '',
-      name: '',
-      email: '',
-      avatar_id: '',
-      avatar_url: '',
-    },
-  },
-};

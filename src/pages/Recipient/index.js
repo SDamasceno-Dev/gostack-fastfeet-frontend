@@ -10,7 +10,7 @@ import api from '~/services/api';
 // Import Templates
 import ListTemplate from '~/pages/_Layouts/listContainer';
 
-export default function Delivery() {
+export default function Recipient() {
   const configList = {
     title: 'Gerenciando destinatários',
     label: ['ID', 'Nome', 'Endereço ', 'Ações'],
