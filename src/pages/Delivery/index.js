@@ -41,7 +41,8 @@ export default function Delivery() {
       });
       setListSearch(response.data);
     } catch (error) {
-      alert('07');
+      console.tron.log(error);
+      toast.error('Erro de conexão com o Banco de dados <db:deliveries>!');
     }
   }
 

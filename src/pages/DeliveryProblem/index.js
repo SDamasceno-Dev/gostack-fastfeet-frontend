@@ -29,7 +29,10 @@ export default function DeliveryProblem() {
       const response = await api.get('delivery/problems');
       setListSearch(response.data);
     } catch (error) {
-      alert('03');
+      console.tron.log(error);
+      toast.error(
+        'Erro de conexão com o Banco de dados <db:deliveries_problem>!'
+      );
     }
   }
 

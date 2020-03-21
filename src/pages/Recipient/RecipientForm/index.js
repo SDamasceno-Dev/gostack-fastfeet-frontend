@@ -37,7 +37,8 @@ export default function RecipientForm(props) {
           zipcode: data.zipcode,
         });
       } catch (error) {
-        alert('05');
+        console.tron.log(error);
+        toast.error('Erro de conexão com o Banco de dados <db:recipient>!');
       }
     } else {
       try {
@@ -52,7 +53,8 @@ export default function RecipientForm(props) {
           zipcode: data.zipcode,
         });
       } catch (error) {
-        alert('06');
+        console.tron.log(error);
+        toast.error('Erro de conexão com o Banco de dados <db:recipient>!');
       }
     }
   }

@@ -32,7 +32,8 @@ export default function Recipient() {
       });
       setListSearch(response.data);
     } catch (error) {
-      alert('04');
+      console.tron.log(error);
+      toast.error('Erro de conexão com o Banco de dados <db:recipient>!');
     }
   }
 

@@ -33,7 +33,10 @@ export default function DelivForm(props) {
         return options;
       })
       .catch(error => {
-        alert('01');
+        console.tron.log(error);
+        toast.error(
+          'Listagem de clientes não foi carregada. Verifique a sua conexão com o Banco de dados.'
+        );
       });
   }
 
@@ -49,7 +52,10 @@ export default function DelivForm(props) {
         return options;
       })
       .catch(error => {
-        alert('02');
+        console.tron.log(error);
+        toast.error(
+          'Listagem de entregadores não foi carregada. Verifique a sua conexão com o Banco de dados.'
+        );
       });
   }
 
@@ -73,8 +79,9 @@ export default function DelivForm(props) {
           recipient_id: recipSelected[0],
           courier_id: courierSelected[0],
         });
+        toast.success('Entrega cadastrada com sucesso!!!');
       } catch (error) {
-        console.tron.log(error);
+        toast.error('Entrega não foi cadastrada!');
       }
     } else {
       try {
@@ -84,8 +91,9 @@ export default function DelivForm(props) {
           recipient_id: recipSelected[0],
           courier_id: courierSelected[0],
         });
+        toast.success('Entrega alterada com sucesso!!!');
       } catch (error) {
-        console.tron.log(error);
+        toast.error('Entrega não foi alterada!');
       }
     }
   }

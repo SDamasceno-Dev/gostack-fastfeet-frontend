@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import PropTypes from 'prop-types';
 
@@ -35,18 +36,14 @@ export default function Actions({
 
   async function handleDeleteItem() {
     const click = window.confirm('Deseja realmente excluir o registro?');
-    if (click) {
-      await api
-        .delete(apiPath, { params: { idItem: searchItem.id } })
-        .then(response => {
-          alert('ok!');
-          console.log(response);
-          searchFunction();
-        })
-        .catch(error => {
-          alert('erro!');
-          console.log(error.response);
-        });
+    try {
+      if (click) {
+        await api.delete(apiPath, { params: { idItem: searchItem.id } });
+        searchFunction();
+      }
+    } catch (error) {
+      console.tron.log(error);
+      toast.error('O registro não foi deletado. Por favor ');
     }
   }
 

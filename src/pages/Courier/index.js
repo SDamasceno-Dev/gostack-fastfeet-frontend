@@ -5,6 +5,7 @@
 
 // Import dependencies
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import api from '~/services/api';
 
@@ -32,7 +33,7 @@ export default function Courier() {
       });
       setListSearch(response.data);
     } catch (error) {
-      alert('Erro Banco de dados - Courier!');
+      toast.error('Erro de conexão com o Banco de dados!');
     }
   }
 
