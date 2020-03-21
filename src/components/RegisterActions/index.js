@@ -35,19 +35,18 @@ export default function Actions({
 
   async function handleDeleteItem() {
     const click = window.confirm('Deseja realmente excluir o registro?');
-    try {
-      if (click) {
-        await api.delete(apiPath, { params: { idItem: searchItem.id } });
-        searchFunction();
-      }
-    } catch (error) {
-      if (error.response) {
-        alert(
-          `DELETE IS NOT POSSIBLE\n${JSON.stringify(error.response.data.error)}`
-        );
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      }
+    if (click) {
+      await api
+        .delete(apiPath, { params: { idItem: searchItem.id } })
+        .then(response => {
+          alert('ok!');
+          console.log(response);
+          searchFunction();
+        })
+        .catch(error => {
+          alert('erro!');
+          console.log(error.response);
+        });
     }
   }
 
@@ -60,6 +59,7 @@ export default function Actions({
               visible={modVisible}
               showModal={() => handleToggleModVisible()}
               data={searchItem}
+              switchActionParams={switchActionParams}
             />
             <ActionItem onClick={handleToggleModVisible}>
               <FaEye color="#8E5BE8" size={15} />
@@ -141,6 +141,25 @@ export default function Actions({
             <ActionItem onClick={handleDeleteItem}>
               <FaTrashAlt color="#DE3B3B" size={15} />
               <span>Excluir</span>
+            </ActionItem>
+          </ActionMenu>
+        );
+      case 'deliveryproblem':
+        return (
+          <ActionMenu visible={visible}>
+            <Modal
+              visible={modVisible}
+              showModal={() => handleToggleModVisible()}
+              data={searchItem}
+              switchActionParams={switchActionParams}
+            />
+            <ActionItem onClick={handleToggleModVisible}>
+              <FaEye color="#8E5BE8" size={15} />
+              <span>Visualizar</span>
+            </ActionItem>
+            <ActionItem onClick={handleDeleteItem}>
+              <FaTrashAlt color="#DE3B3B" size={15} />
+              <span>Cancelar encomenda</span>
             </ActionItem>
           </ActionMenu>
         );

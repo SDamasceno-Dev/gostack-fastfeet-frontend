@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+
 import PropTypes from 'prop-types';
 import Select from 'react-select/async';
 
@@ -31,7 +33,7 @@ export default function DelivForm(props) {
         return options;
       })
       .catch(error => {
-        console.tron.log(error);
+        alert('01');
       });
   }
 
@@ -47,7 +49,7 @@ export default function DelivForm(props) {
         return options;
       })
       .catch(error => {
-        console.tron.log(error);
+        alert('02');
       });
   }
 
@@ -71,8 +73,8 @@ export default function DelivForm(props) {
           recipient_id: recipSelected[0],
           courier_id: courierSelected[0],
         });
-      } catch (err) {
-        console.tron.log(err);
+      } catch (error) {
+        console.tron.log(error);
       }
     } else {
       try {
@@ -82,8 +84,8 @@ export default function DelivForm(props) {
           recipient_id: recipSelected[0],
           courier_id: courierSelected[0],
         });
-      } catch (err) {
-        console.tron.log(err);
+      } catch (error) {
+        console.tron.log(error);
       }
     }
   }

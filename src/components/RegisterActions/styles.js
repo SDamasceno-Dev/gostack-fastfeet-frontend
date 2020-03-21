@@ -14,9 +14,9 @@ export const ActionBtnMenu = styled.button`
 
 export const ActionMenu = styled.div`
   position: absolute;
-  width: 150px;
+  width: auto;
   padding: 17px 10px;
-  left: calc(50% - 75px);
+  left: calc(50% - 85px);
   top: calc(100% + 5px);
   background: #fff;
   border: 0;
@@ -46,7 +46,8 @@ export const ActionItem = styled.button`
   justify-content: left;
   align-items: center;
   border: 0;
-  width: 100%;
+  min-width: 150px;
+  width: max-content;
 
   :hover {
     font-weight: bold;

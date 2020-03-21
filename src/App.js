@@ -27,7 +27,7 @@ function App() {
       <PersistGate persistor={persistor}>
         <Router history={history}>
           <GlobalStyle />
-          <ToastContainer autoClose={2000} />
+          <ToastContainer autoClose={3000} />
           <Routes />
         </Router>
       </PersistGate>

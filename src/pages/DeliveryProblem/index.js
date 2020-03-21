@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import api from '~/services/api';
 
@@ -13,37 +14,34 @@ import ListTemplate from '~/pages/_Layouts/listContainer';
 export default function DeliveryProblem() {
   const configList = {
     title: 'Problemas na entrega',
+    firstColumn: '215px',
     label: ['Encomenda', 'Problema', 'Ações'],
     toolsBar: false,
     inputPlaceholder: 'Buscar por encomendas',
-    apiPath: 'delivery',
-    switchParam: 'delivery',
+    apiPath: 'deliveryproblem',
+    switchParam: 'deliveryproblem',
   };
 
   const [search, setListSearch] = useState([]);
-  const [query, setQuery] = useState();
 
-  async function searchDeliv(q) {
+  async function listDelivProblem() {
     try {
-      const response = await api.get('delivery', {
-        params: { q },
-      });
+      const response = await api.get('delivery/problems');
       setListSearch(response.data);
-    } catch (err) {
-      console.tron.log(err);
+    } catch (error) {
+      alert('03');
     }
   }
 
   useEffect(() => {
-    searchDeliv(query);
-  }, [query]);
+    listDelivProblem();
+  }, []);
 
   return (
     <ListTemplate
       configList={configList}
       searchData={search}
-      searchFunction={() => searchDeliv()}
-      searchQuery={setQuery}
+      searchFunction={() => listDelivProblem()}
     />
   );
 }

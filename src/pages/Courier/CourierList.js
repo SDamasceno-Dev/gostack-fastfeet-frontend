@@ -15,12 +15,16 @@ export default function CourierList({
   searchData,
   searchFunction,
 }) {
-  const { label, apiPath } = configList;
+  const { label, apiPath, firstColumn } = configList;
 
   return (
     <ListContent>
       {searchData.map(srch => (
-        <ListElement key={srch.id} colQtd={label.length}>
+        <ListElement
+          key={srch.id}
+          colQtd={label.length}
+          firstColumn={firstColumn}
+        >
           <span>#{srch.id}</span>
           <img src={srch.avatar.url} alt="" />
           <span>{srch.name}</span>

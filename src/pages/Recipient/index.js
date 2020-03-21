@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import api from '~/services/api';
 
@@ -13,6 +14,7 @@ import ListTemplate from '~/pages/_Layouts/listContainer';
 export default function Recipient() {
   const configList = {
     title: 'Gerenciando destinatários',
+    firstColumn: '60px',
     label: ['ID', 'Nome', 'Endereço ', 'Ações'],
     toolsBar: true,
     inputPlaceholder: 'Buscar por destinatários',
@@ -29,8 +31,8 @@ export default function Recipient() {
         params: { q },
       });
       setListSearch(response.data);
-    } catch (err) {
-      console.tron.log(err);
+    } catch (error) {
+      alert('04');
     }
   }
 

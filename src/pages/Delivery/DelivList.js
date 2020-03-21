@@ -12,12 +12,16 @@ import Badges from '~/components/Badges';
 import { ListContent, ListElement } from './DelivListStyles';
 
 export default function DelivList({ configList, searchData, searchFunction }) {
-  const { label, apiPath } = configList;
+  const { label, apiPath, firstColumn } = configList;
 
   return (
     <ListContent>
       {searchData.map(srch => (
-        <ListElement key={srch.id} colQtd={label.length}>
+        <ListElement
+          key={srch.id}
+          colQtd={label.length}
+          firstColumn={firstColumn}
+        >
           <span>#{srch.id}</span>
           <span>{srch.recipient.name}</span>
           <span>
@@ -47,7 +51,6 @@ DelivList.propTypes = {
     PropTypes.number,
     PropTypes.array,
   ]).isRequired,
-  searchData: PropTypes.arrayOf([PropTypes.string, PropTypes.number])
-    .isRequired,
+  searchData: PropTypes.arrayOf([PropTypes.array]).isRequired,
   searchFunction: PropTypes.func.isRequired,
 };

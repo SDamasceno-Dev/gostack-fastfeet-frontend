@@ -15,6 +15,7 @@ import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 import DelivList from '~/pages/Delivery/DelivList';
 import CourierList from '~/pages/Courier/CourierList';
 import RecipientList from '~/pages/Recipient/RecipientList';
+import DelivProblemList from '~/pages/DeliveryProblem/DelivProblemList';
 
 import {
   Container,
@@ -31,7 +32,14 @@ export default function ListTemplate({
   searchFunction,
   searchQuery,
 }) {
-  const { title, label, toolsBar, inputPlaceholder, switchParam } = configList;
+  const {
+    title,
+    firstColumn,
+    label,
+    toolsBar,
+    inputPlaceholder,
+    switchParam,
+  } = configList;
   const loading = false;
 
   function handleQuerySearch({ query }) {
@@ -69,7 +77,9 @@ export default function ListTemplate({
           />
         );
       default:
-        return null;
+        return (
+          <DelivProblemList configList={configList} searchData={searchData} />
+        );
     }
   }
 
@@ -149,7 +159,7 @@ export default function ListTemplate({
         </Link>
       </ToolsBar>
       <ListContainer>
-        <ListHeader colQtd={label.length}>
+        <ListHeader firstColumn={firstColumn} colQtd={label.length}>
           {label.map(lbl => (
             <span key={lbl} className={lbl === 'Foto' ? 'center' : ''}>
               {lbl}
@@ -165,6 +175,7 @@ export default function ListTemplate({
 ListTemplate.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,
+    firstColumn: PropTypes.string,
     label: PropTypes.array,
     toolsBar: PropTypes.bool,
     apiPath: PropTypes.string,

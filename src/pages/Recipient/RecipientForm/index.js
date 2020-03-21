@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { Form, Input } from '@rocketseat/unform';
 import { Link } from 'react-router-dom';
 
@@ -18,14 +19,12 @@ export default function RecipientForm(props) {
   const { title } = dataItem;
   const { id } = dataItem.data;
   const [item, setItem] = useState(dataItem.data.searchItem);
-  console.tron.log(dataItem);
 
   useEffect(() => {
     setItem(item);
   }, [item]);
 
   async function handleSubmit(data) {
-    console.tron.log(data);
     if (id === '') {
       try {
         await api.post('recipient', {
@@ -37,8 +36,8 @@ export default function RecipientForm(props) {
           state: data.state,
           zipcode: data.zipcode,
         });
-      } catch (err) {
-        console.tron.log(err);
+      } catch (error) {
+        alert('05');
       }
     } else {
       try {
@@ -52,8 +51,8 @@ export default function RecipientForm(props) {
           state: data.state,
           zipcode: data.zipcode,
         });
-      } catch (err) {
-        console.tron.log(err);
+      } catch (error) {
+        alert('06');
       }
     }
   }

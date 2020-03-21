@@ -4,10 +4,27 @@ import PropTypes from 'prop-types';
 import { FaWindowClose } from 'react-icons/fa';
 
 import DelivView from '~/pages/Delivery/delivView';
+import DelivProbView from '~/pages/DeliveryProblem/DelivProbView';
 
 import { Container, ModalWindow } from './styles';
 
-export default function Modal({ visible, showModal, data }) {
+export default function Modal({
+  visible,
+  showModal,
+  data,
+  switchActionParams,
+}) {
+  function switchModal(param) {
+    switch (param) {
+      case 'delivery':
+        return <DelivView itemData={data} />;
+      case 'deliveryproblem':
+        return <DelivProbView itemData={data} />;
+      default:
+        return null;
+    }
+  }
+
   return (
     <Container>
       <ModalWindow visible={visible}>
@@ -15,7 +32,7 @@ export default function Modal({ visible, showModal, data }) {
           <button type="button" onClick={showModal}>
             <FaWindowClose color="#7d40e7" size={20} />
           </button>
-          <DelivView itemData={data} />
+          {switchModal(switchActionParams)}
         </div>
       </ModalWindow>
     </Container>
@@ -25,7 +42,5 @@ export default function Modal({ visible, showModal, data }) {
 Modal.propTypes = {
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func.isRequired,
-  data: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  ).isRequired,
+  data: PropTypes.arrayOf(PropTypes.array).isRequired,
 };

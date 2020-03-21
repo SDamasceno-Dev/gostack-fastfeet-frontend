@@ -14,6 +14,7 @@ import ListTemplate from '~/pages/_Layouts/listContainer';
 export default function Courier() {
   const configList = {
     title: 'Gerenciando entregadores',
+    firstColumn: '60px',
     label: ['ID', 'Foto', 'Nome', 'EMail', 'Ações'],
     toolsBar: true,
     inputPlaceholder: 'Buscar por entregadores',
@@ -30,7 +31,7 @@ export default function Courier() {
         params: { q },
       });
       setListSearch(response.data);
-    } catch (err) {
+    } catch (error) {
       alert('Erro Banco de dados - Courier!');
     }
   }

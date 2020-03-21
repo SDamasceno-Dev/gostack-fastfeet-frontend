@@ -5,6 +5,7 @@
 
 // Import dependencies
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import api from '~/services/api';
 
@@ -14,6 +15,7 @@ import ListTemplate from '~/pages/_Layouts/listContainer';
 export default function Delivery() {
   const configList = {
     title: 'Gerenciando encomendas',
+    firstColumn: '60px',
     label: [
       'ID',
       'Destinatário',
@@ -38,8 +40,8 @@ export default function Delivery() {
         params: { q },
       });
       setListSearch(response.data);
-    } catch (err) {
-      console.tron.log(err);
+    } catch (error) {
+      alert('07');
     }
   }
 

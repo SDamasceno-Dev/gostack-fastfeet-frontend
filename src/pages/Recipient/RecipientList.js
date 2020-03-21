@@ -10,12 +10,16 @@ export default function RecipientList({
   searchData,
   searchFunction,
 }) {
-  const { label, apiPath } = configList;
+  const { label, apiPath, firstColumn } = configList;
 
   return (
     <ListContent>
       {searchData.map(srch => (
-        <ListElement key={srch.id} colQtd={label.length}>
+        <ListElement
+          key={srch.id}
+          colQtd={label.length}
+          firstColumn={firstColumn}
+        >
           <span>#{srch.id}</span>
           <span>{srch.name}</span>
           <span>{`${srch.street}, ${srch.number}, ${srch.city} - ${srch.state} `}</span>

@@ -36,7 +36,7 @@ export default function Header() {
           <NavLink to="/recipient" activeClassName="select">
             DESTINATÁRIOS
           </NavLink>
-          <NavLink to="/problem" activeClassName="select">
+          <NavLink to="/deliveryproblem" activeClassName="select">
             PROBLEMAS
           </NavLink>
         </nav>

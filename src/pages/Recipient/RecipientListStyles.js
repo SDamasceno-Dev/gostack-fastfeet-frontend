@@ -9,7 +9,12 @@ export const ListContent = styled.div`
 
 export const ListElement = styled.div`
   display: grid;
-  grid-template-columns: 60px repeat(calc(${props => props.colQtd} - 2), 1fr) 60px;
+  grid-template-columns:
+    ${props => props.firstColumn} repeat(
+      calc(${props => props.colQtd} - 2),
+      1fr
+    )
+    60px;
   width: 100%;
   height: 57px;
   padding: 10px 23px;
