@@ -154,7 +154,9 @@ export default function Actions({
               <FaEye color="#8E5BE8" size={15} />
               <span>Visualizar</span>
             </ActionItem>
-            <ActionItem onClick={handleDeleteItem}>
+            <ActionItem
+              onClick={() => handleDeleteItem(searchItem.delivery_id)}
+            >
               <FaTrashAlt color="#DE3B3B" size={15} />
               <span>Cancelar encomenda</span>
             </ActionItem>

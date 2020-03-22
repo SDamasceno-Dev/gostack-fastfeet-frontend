@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import formatDate from '~/util/formatDate';
+
+import signaturePlaceholder from '~/assets/signature_placeholder.jpg';
 
 import { DelivContainer } from './delivViewStyles';
 
@@ -19,20 +23,36 @@ export default function Delivery({ itemData }) {
         <strong>Datas</strong>
         <div>
           <span id="label">Retirada: </span>
-          <span>{itemData.start_date}</span>
+          <span>
+            {itemData.start_date !== null
+              ? formatDate(itemData.start_date)
+              : 'Sem informação'}
+          </span>
         </div>
         <div>
           <span id="label">Entrega: </span>
-          <span>{itemData.end_date}</span>
+          <span>
+            {itemData.start_date !== null
+              ? formatDate(itemData.end_date)
+              : 'Sem informação'}
+          </span>
         </div>
         <hr />
         <strong>Assinatura do destinatário</strong>
         <img
           id="signature"
-          src="https://via.placeholder.com/234x36.png?text=Assinatura"
+          src={
+            itemData.signature !== null
+              ? itemData.signature.url
+              : signaturePlaceholder
+          }
           alt="assinatura"
         />
       </div>
     </DelivContainer>
   );
 }
+
+Delivery.propTypes = {
+  itemData: PropTypes.arrayOf(PropTypes.array).isRequired,
+};

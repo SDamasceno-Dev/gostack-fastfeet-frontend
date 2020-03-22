@@ -17,9 +17,11 @@ import AvatarInput from '~/pages/Courier/AvatarInput';
 import { Container } from './styles';
 
 export default function CourierProfile(props) {
-  const dataItem = props.location.state;
+  const { location } = props;
+  const { state } = location;
+  const dataItem = state;
   const { title } = dataItem;
-  const { id } = dataItem.data;
+  const { id, avatar_url } = dataItem.data;
 
   async function regCourier(data) {
     try {
@@ -61,7 +63,7 @@ export default function CourierProfile(props) {
         </aside>
       </div>
       <Form initialData={dataItem.data} id="CourierForm" onSubmit={regCourier}>
-        <AvatarInput name="avatar_id" />
+        <AvatarInput name="avatar_id" avatar_url={avatar_url} />
         <label htmlFor="name">
           Nome
           <Input id="name" name="name" placeholder="Nome do entregador..." />

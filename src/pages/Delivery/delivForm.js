@@ -12,7 +12,9 @@ import api from '~/services/api';
 import { Container, FormElement, Input } from './delivFormStyles';
 
 export default function DelivForm(props) {
-  const dataItem = props.location.state;
+  const { location } = props;
+  const { state } = location;
+  const dataItem = state;
   const { title } = dataItem;
   const { id } = dataItem.data;
   const { product } = dataItem.data;

@@ -43,4 +43,5 @@ Modal.propTypes = {
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(PropTypes.array).isRequired,
+  switchActionParams: PropTypes.string.isRequired,
 };

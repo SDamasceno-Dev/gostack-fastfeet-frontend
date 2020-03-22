@@ -5,11 +5,12 @@ import api from '~/services/api';
 
 import { Container } from './styles';
 
-export default function AvatarInput() {
+export default function AvatarInput({ avatar_url }) {
+  console.tron.log(avatar_url);
   const { defaultValue, registerField } = useField('avatar');
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
-  const [preview, setPreview] = useState(defaultValue && defaultValue.url);
+  const [preview, setPreview] = useState(avatar_url);
 
   const ref = useRef();
 
