@@ -47,6 +47,21 @@ export default function Actions({
     }
   }
 
+  async function handleCancelDeliv(deliveryProblemId) {
+    const click = window.confirm('Deseja realmente cancelar a entrega?');
+    try {
+      if (click) {
+        await api.delete(`/problem/${deliveryProblemId}/cancel-delivery`);
+        toast.success('A entrega foi cancelada com sucesso!');
+      }
+    } catch (error) {
+      console.tron.log(error);
+      toast.error(
+        'A entrega não foi cancelada. Verifique as informações prestadas!'
+      );
+    }
+  }
+
   function switchActionsButtons(switchButtons) {
     switch (switchButtons) {
       case 'delivery':
@@ -154,9 +169,7 @@ export default function Actions({
               <FaEye color="#8E5BE8" size={15} />
               <span>Visualizar</span>
             </ActionItem>
-            <ActionItem
-              onClick={() => handleDeleteItem(searchItem.delivery_id)}
-            >
+            <ActionItem onClick={() => handleCancelDeliv(searchItem.id)}>
               <FaTrashAlt color="#DE3B3B" size={15} />
               <span>Cancelar encomenda</span>
             </ActionItem>
