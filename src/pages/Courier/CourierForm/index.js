@@ -86,7 +86,5 @@ export default function CourierProfile(props) {
 }
 
 CourierProfile.propTypes = {
-  location: PropTypes.arrayOf([
-    PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
-  ]).isRequired,
+  location: PropTypes.arrayOf([PropTypes.oneOfType([])]).isRequired,
 };

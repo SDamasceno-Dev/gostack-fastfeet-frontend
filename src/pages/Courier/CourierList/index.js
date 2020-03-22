@@ -51,8 +51,6 @@ CourierList.propTypes = {
     switchParam: PropTypes.string,
     firstColumn: PropTypes.string,
   }).isRequired,
-  searchData: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array])
-  ).isRequired,
+  searchData: PropTypes.arrayOf([PropTypes.oneOfType([])]).isRequired,
   searchFunction: PropTypes.func.isRequired,
 };

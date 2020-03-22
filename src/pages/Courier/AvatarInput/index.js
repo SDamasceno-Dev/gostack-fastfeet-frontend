@@ -5,8 +5,9 @@ import api from '~/services/api';
 
 import { Container } from './styles';
 
+import defaultAvatar from './addPhoto.svg';
+
 export default function AvatarInput({ avatar_url }) {
-  console.tron.log(avatar_url);
   const { defaultValue, registerField } = useField('avatar');
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
@@ -36,12 +37,7 @@ export default function AvatarInput({ avatar_url }) {
   return (
     <Container>
       <label htmlFor="avatar">
-        <img
-          src={
-            preview || 'https://api.adorable.io/avatars/150/abott@adorable.png'
-          }
-          alt=""
-        />
+        <img src={preview || defaultAvatar} alt="" />
         <input
           type="file"
           id="avatar"

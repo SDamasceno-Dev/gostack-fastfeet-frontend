@@ -131,6 +131,7 @@ export default function ListTemplate({
         };
     }
   }
+  console.tron.log('aqui', searchData);
 
   return (
     <Container>
@@ -182,9 +183,16 @@ ListTemplate.propTypes = {
     inputPlaceholder: PropTypes.string,
     switchParam: PropTypes.string,
   }).isRequired,
-  searchData: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array])
-  ).isRequired,
+  searchData: PropTypes.arrayOf([
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
+      PropTypes.array,
+      PropTypes.func,
+      PropTypes.object,
+    ]),
+  ]).isRequired,
   searchFunction: PropTypes.func.isRequired,
   searchQuery: PropTypes.func.isRequired,
 };
