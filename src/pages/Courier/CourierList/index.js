@@ -1,11 +1,16 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: List component para Courier Page
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import RegisterActions from '~/components/RegisterActions';
 
-import { ListContent, ListElement } from './RecipientListStyles';
+import { ListContent, ListElement } from './styles';
 
-export default function RecipientList({
+export default function CourierList({
   configList,
   searchData,
   searchFunction,
@@ -21,13 +26,14 @@ export default function RecipientList({
           firstColumn={firstColumn}
         >
           <span>#{srch.id}</span>
+          <img src={srch.avatar.url} alt="" />
           <span>{srch.name}</span>
-          <span>{`${srch.street}, ${srch.number}, ${srch.city} - ${srch.state} `}</span>
+          <span>{srch.email}</span>
           <RegisterActions
             searchItem={srch}
             apiPath={apiPath}
             searchFunction={() => searchFunction()}
-            switchActionParams="recipient"
+            switchActionParams="courier"
           />
         </ListElement>
       ))}
@@ -35,7 +41,7 @@ export default function RecipientList({
   );
 }
 
-RecipientList.propTypes = {
+CourierList.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,
     label: PropTypes.array,
@@ -43,6 +49,7 @@ RecipientList.propTypes = {
     apiPath: PropTypes.string,
     inputPlaceholder: PropTypes.string,
     switchParam: PropTypes.string,
+    firstColumn: PropTypes.string,
   }).isRequired,
   searchData: PropTypes.arrayOf(
     PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array])

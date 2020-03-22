@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 
@@ -83,3 +84,9 @@ export default function CourierProfile(props) {
     </Container>
   );
 }
+
+CourierProfile.propTypes = {
+  location: PropTypes.arrayOf([
+    PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.number]),
+  ]).isRequired,
+};

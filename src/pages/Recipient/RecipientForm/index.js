@@ -36,6 +36,7 @@ export default function RecipientForm(props) {
           state: data.state,
           zipcode: data.zipcode,
         });
+        toast.success('Destinatário cadastrado com sucesso!');
       } catch (error) {
         console.tron.log(error);
         toast.error('Erro de conexão com o Banco de dados <db:recipient>!');
@@ -52,6 +53,7 @@ export default function RecipientForm(props) {
           state: data.state,
           zipcode: data.zipcode,
         });
+        toast.success('Destinatário atualizado com sucesso!');
       } catch (error) {
         console.tron.log(error);
         toast.error('Erro de conexão com o Banco de dados <db:recipient>!');

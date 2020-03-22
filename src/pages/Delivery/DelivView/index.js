@@ -4,7 +4,7 @@ import formatDate from '~/util/formatDate';
 
 import signaturePlaceholder from '~/assets/signature_placeholder.jpg';
 
-import { DelivContainer } from './delivViewStyles';
+import { DelivContainer } from './styles';
 
 export default function Delivery({ itemData }) {
   return (
@@ -54,5 +54,5 @@ export default function Delivery({ itemData }) {
 }
 
 Delivery.propTypes = {
-  itemData: PropTypes.arrayOf(PropTypes.array).isRequired,
+  itemData: PropTypes.arrayOf([PropTypes.array]).isRequired,
 };

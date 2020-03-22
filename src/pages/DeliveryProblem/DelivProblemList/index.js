@@ -30,11 +30,16 @@ export default function DelivProblemList({ configList, searchData }) {
 }
 
 DelivProblemList.propTypes = {
-  configList: PropTypes.arrayOf([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.array,
-  ]).isRequired,
-  searchData: PropTypes.arrayOf([PropTypes.string, PropTypes.number])
-    .isRequired,
+  configList: PropTypes.shape({
+    title: PropTypes.string,
+    label: PropTypes.array,
+    toolsBar: PropTypes.bool,
+    apiPath: PropTypes.string,
+    inputPlaceholder: PropTypes.string,
+    switchParam: PropTypes.string,
+    firstColumn: PropTypes.string,
+  }).isRequired,
+  searchData: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array])
+  ).isRequired,
 };

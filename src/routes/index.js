@@ -10,7 +10,7 @@ import Route from './Route';
 // Pages of the App
 import SignIn from '../pages/SignIn';
 import Delivery from '../pages/Delivery';
-import DeliveryFrm from '../pages/Delivery/delivForm';
+import DeliveryFrm from '../pages/Delivery/DelivForm';
 import Courier from '../pages/Courier';
 import CourierFrm from '../pages/Courier/CourierForm';
 import Recipient from '../pages/Recipient';

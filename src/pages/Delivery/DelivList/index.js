@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import RegisterActions from '~/components/RegisterActions';
 import Badges from '~/components/Badges';
 
-import { ListContent, ListElement } from './DelivListStyles';
+import { ListContent, ListElement } from './styles';
 
 export default function DelivList({ configList, searchData, searchFunction }) {
   const { label, apiPath, firstColumn } = configList;
@@ -46,11 +46,15 @@ export default function DelivList({ configList, searchData, searchFunction }) {
 }
 
 DelivList.propTypes = {
-  configList: PropTypes.arrayOf([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.array,
-  ]).isRequired,
+  configList: PropTypes.shape({
+    title: PropTypes.string,
+    label: PropTypes.array,
+    toolsBar: PropTypes.bool,
+    apiPath: PropTypes.string,
+    inputPlaceholder: PropTypes.string,
+    switchParam: PropTypes.string,
+    firstColumn: PropTypes.string,
+  }).isRequired,
   searchData: PropTypes.arrayOf([PropTypes.array]).isRequired,
   searchFunction: PropTypes.func.isRequired,
 };

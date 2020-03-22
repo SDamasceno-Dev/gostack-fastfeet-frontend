@@ -9,7 +9,7 @@ import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
-import { Container, FormElement, Input } from './delivFormStyles';
+import { Container, FormElement, Input } from './styles';
 
 export default function DelivForm(props) {
   const { location } = props;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { FaWindowClose } from 'react-icons/fa';
 
-import DelivView from '~/pages/Delivery/delivView';
+import DelivView from '~/pages/Delivery/DelivView';
 import DelivProbView from '~/pages/DeliveryProblem/DelivProbView';
 
 import { Container, ModalWindow } from './styles';
@@ -14,6 +14,7 @@ export default function Modal({
   data,
   switchActionParams,
 }) {
+  console.tron.log('data', data);
   function switchModal(param) {
     switch (param) {
       case 'delivery':
@@ -42,6 +43,6 @@ export default function Modal({
 Modal.propTypes = {
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func.isRequired,
-  data: PropTypes.arrayOf(PropTypes.array).isRequired,
+  data: PropTypes.arrayOf([PropTypes.string, PropTypes.number]).isRequired,
   switchActionParams: PropTypes.string.isRequired,
 };
