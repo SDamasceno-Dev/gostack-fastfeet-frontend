@@ -39,11 +39,14 @@ export default function Actions({
     try {
       if (click) {
         await api.delete(apiPath, { params: { idItem: searchItem.id } });
+        toast.success('Registro deletado!');
         searchFunction();
       }
     } catch (error) {
       console.tron.log(error);
-      toast.error('O registro não foi deletado. Por favor ');
+      toast.error(
+        'O registro não foi deletado. Por favor, tente mais tarde ou informe ao suporte técnico.'
+      );
     }
   }
 

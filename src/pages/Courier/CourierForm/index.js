@@ -31,6 +31,7 @@ export default function CourierProfile(props) {
           email: data.email,
           avatar_id: data.avatar_id,
         });
+        toast.success('Entregador cadastrado com sucesso!');
       } else {
         await api.put('courier', {
           id,
@@ -38,6 +39,7 @@ export default function CourierProfile(props) {
           email: data.email,
           avatar_id: data.avatar_id,
         });
+        toast.success('Entregador atualizado com sucesso!');
       }
     } catch (error) {
       console.tron.log(error);
