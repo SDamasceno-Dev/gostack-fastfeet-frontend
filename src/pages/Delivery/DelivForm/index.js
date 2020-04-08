@@ -1,14 +1,23 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: Form to register a new Delivery or edit one
+ */
+
+// Importing dependencies
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-
 import PropTypes from 'prop-types';
-import Select from 'react-select/async';
 
+// Import elements to be used
+import Select from 'react-select/async';
 import { Link } from 'react-router-dom';
+
+// Import the icon to be used
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
+// Import the style used
 import { Container, FormElement, Input } from './styles';
 
 export default function DelivForm(props) {
@@ -170,6 +179,7 @@ export default function DelivForm(props) {
   );
 }
 
+// PropTypes necessary
 DelivForm.propTypes = {
   location: PropTypes.arrayOf([
     PropTypes.number,

@@ -1,11 +1,20 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: Component that allows to insert avatar in the Courier profile
+ */
+
+// Importing dependencies
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
+import PropTypes from 'prop-types';
 
-import api from '~/services/api';
-
+// Import the style used
 import { Container } from './styles';
 
+// Default avatar for the input
 import defaultAvatar from './addPhoto.svg';
+
+import api from '~/services/api';
 
 export default function AvatarInput({ avatar_url }) {
   const { defaultValue, registerField } = useField('avatar');
@@ -50,3 +59,8 @@ export default function AvatarInput({ avatar_url }) {
     </Container>
   );
 }
+
+// PropTypes necessary
+AvatarInput.propTypes = {
+  avatar_url: PropTypes.string.isRequired,
+};

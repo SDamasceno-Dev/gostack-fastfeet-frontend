@@ -1,8 +1,15 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: List all Delivery problems
+ */
+
+// Importing dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import RegisterActions from '~/components/RegisterActions';
 
+// Import the style used
 import { ListContent, ListElement } from './styles';
 
 export default function DelivProblemList({ configList, searchData }) {
@@ -29,6 +36,7 @@ export default function DelivProblemList({ configList, searchData }) {
   );
 }
 
+// PropTypes necessary
 DelivProblemList.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,

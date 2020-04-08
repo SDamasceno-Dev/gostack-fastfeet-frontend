@@ -6,17 +6,19 @@
 // Import dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { Form, Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
+// Import the icon used
 import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
 
+// Import the pages used
 import DelivList from '~/pages/Delivery/DelivList';
 import CourierList from '~/pages/Courier/CourierList';
 import RecipientList from '~/pages/Recipient/RecipientList';
 import DelivProblemList from '~/pages/DeliveryProblem/DelivProblemList';
 
+// Import the style used
 import {
   Container,
   ToolsBar,
@@ -42,6 +44,7 @@ export default function ListTemplate({
   } = configList;
   const loading = false;
 
+  // Passing params for the search
   function handleQuerySearch({ query }) {
     if (query) {
       searchQuery(query);
@@ -50,6 +53,7 @@ export default function ListTemplate({
     }
   }
 
+  // Function that defines wich list must bem loaded
   function switchList(listComponent) {
     switch (listComponent) {
       case 'delivery':
@@ -83,6 +87,7 @@ export default function ListTemplate({
     }
   }
 
+  // Function that defines which values must be loaded to the form
   function switchBtnRegister(param) {
     switch (param) {
       case 'delivery':
@@ -131,7 +136,6 @@ export default function ListTemplate({
         };
     }
   }
-  console.tron.log('aqui', searchData);
 
   return (
     <Container>
@@ -173,6 +177,7 @@ export default function ListTemplate({
   );
 }
 
+// PropTypes necessary
 ListTemplate.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,

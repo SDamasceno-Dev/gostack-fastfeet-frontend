@@ -1,11 +1,20 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: Component Modal used in the App
+ */
+
+// Importing dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Import the icon used
 import { FaWindowClose } from 'react-icons/fa';
 
+// Import the pages used
 import DelivView from '~/pages/Delivery/DelivView';
 import DelivProbView from '~/pages/DeliveryProblem/DelivProbView';
 
+// Import the style used
 import { Container, ModalWindow } from './styles';
 
 export default function Modal({
@@ -14,7 +23,7 @@ export default function Modal({
   data,
   switchActionParams,
 }) {
-  console.tron.log('data', data);
+  // Function that determines which page should be loaded
   function switchModal(param) {
     switch (param) {
       case 'delivery':
@@ -40,6 +49,7 @@ export default function Modal({
   );
 }
 
+// PropTypes necessary
 Modal.propTypes = {
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func.isRequired,

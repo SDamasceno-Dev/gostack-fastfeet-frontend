@@ -1,5 +1,13 @@
-import React from 'react';
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: View the problem of a Delivery
+ */
 
+// Importing dependencies
+import React from 'react';
+import PropTypes from 'prop-types';
+
+// Import the style used
 import { Container } from './styles';
 
 export default function DelivProbView({ itemData }) {
@@ -10,3 +18,12 @@ export default function DelivProbView({ itemData }) {
     </Container>
   );
 }
+
+// PropTypes necessary
+DelivProbView.propTypes = {
+  itemData: PropTypes.arrayOf([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.array,
+  ]).isRequired,
+};

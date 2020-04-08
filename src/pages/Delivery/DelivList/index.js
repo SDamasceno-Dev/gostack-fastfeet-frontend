@@ -1,14 +1,17 @@
 /**
  * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
- * @description: List component para Delivery Page
+ * @description: List component for Delivery Page
  */
 
+// Importing dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Import components
 import RegisterActions from '~/components/RegisterActions';
 import Badges from '~/components/Badges';
 
+// Import the style used
 import { ListContent, ListElement } from './styles';
 
 export default function DelivList({ configList, searchData, searchFunction }) {
@@ -16,6 +19,7 @@ export default function DelivList({ configList, searchData, searchFunction }) {
 
   return (
     <ListContent>
+      {/* Load each register on the list */}
       {searchData.map(srch => (
         <ListElement
           key={srch.id}
@@ -45,6 +49,7 @@ export default function DelivList({ configList, searchData, searchFunction }) {
   );
 }
 
+// PropTypes necessary
 DelivList.propTypes = {
   configList: PropTypes.shape({
     title: PropTypes.string,

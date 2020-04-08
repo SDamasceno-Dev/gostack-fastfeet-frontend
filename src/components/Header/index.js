@@ -3,7 +3,7 @@
  * @description: Component Header of the App
  */
 
-// import dependencies
+// Importing dependencies
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -12,12 +12,14 @@ import { NavLink } from 'react-router-dom';
 import logo from '~/assets/FastfeetHeaderLogo.svg';
 import { signOut } from '~/store/modules/auth/actions';
 
+// Import the styled used
 import { Container, Content, Profile } from './styles';
 
 export default function Header() {
   const profile = useSelector(state => state.user);
   const dispatch = useDispatch();
 
+  // The function that leaves the system
   function handleSignOut() {
     dispatch(signOut());
   }
@@ -25,6 +27,7 @@ export default function Header() {
   return (
     <Container>
       <Content>
+        {/* NavLinks */}
         <nav>
           <img src={logo} alt="FastFeet" />
           <NavLink to="/delivery" activeClassName="select">
@@ -40,6 +43,7 @@ export default function Header() {
             PROBLEMAS
           </NavLink>
         </nav>
+        {/* Profile data */}
         <aside>
           <Profile>
             <div>

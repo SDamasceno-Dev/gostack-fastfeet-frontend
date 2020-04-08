@@ -1,17 +1,21 @@
 /**
  * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
- * @description:
+ * @description: Form to create or edit a Recipient
  */
 
+// Importing dependencies
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { Form, Input } from '@rocketseat/unform';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+// Import the icon to be used
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
+// Import the style used
 import { Container } from './styles';
 
 export default function RecipientForm(props) {
@@ -121,3 +125,12 @@ export default function RecipientForm(props) {
     </Container>
   );
 }
+
+// PropTypes necessary
+RecipientForm.propTypes = {
+  location: PropTypes.arrayOf([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.array,
+  ]).isRequired,
+};

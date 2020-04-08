@@ -3,16 +3,19 @@
  * @description: Component Actions usable on all lists
  */
 
+// Importing dependencies
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
 import PropTypes from 'prop-types';
 
+// Import the icon used
 import { FaEllipsisH, FaEye, FaPen, FaTrashAlt } from 'react-icons/fa';
 
+// Import components used
 import Modal from '~/components/Modal';
 
+// Import the style used
 import { Container, ActionBtnMenu, ActionMenu, ActionItem } from './styles';
 
 import api from '~/services/api';
@@ -26,14 +29,17 @@ export default function Actions({
   const [visible, setVisible] = useState(false);
   const [modVisible, setModVisible] = useState(false);
 
+  // Change the visibility of submenu
   function handleToggleVisible() {
     setVisible(!visible);
   }
 
+  // Change the visibility of modal
   function handleToggleModVisible() {
     setModVisible(!modVisible);
   }
 
+  // Async function to delete the registry
   async function handleDeleteItem() {
     const click = window.confirm('Deseja realmente excluir o registro?');
     try {
@@ -50,6 +56,7 @@ export default function Actions({
     }
   }
 
+  // Async function that cancel a delivery
   async function handleCancelDeliv(deliveryProblemId) {
     const click = window.confirm('Deseja realmente cancelar a entrega?');
     try {
@@ -65,6 +72,8 @@ export default function Actions({
     }
   }
 
+  // The function that, based on the passed parameters, defines which Action
+  // Buttons to be loaded
   function switchActionsButtons(switchButtons) {
     switch (switchButtons) {
       case 'delivery':
@@ -193,6 +202,7 @@ export default function Actions({
   );
 }
 
+// PropTypes necessary
 Actions.propTypes = {
   searchItem: PropTypes.shape().isRequired,
   apiPath: PropTypes.string.isRequired,

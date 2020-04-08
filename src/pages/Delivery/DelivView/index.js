@@ -1,9 +1,16 @@
+/**
+ * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
+ * @description: View all the details of the Delivery
+ */
+
+// Importing dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 import formatDate from '~/util/formatDate';
 
 import signaturePlaceholder from '~/assets/signature_placeholder.jpg';
 
+// Import the style used
 import { DelivContainer } from './styles';
 
 export default function Delivery({ itemData }) {
@@ -53,6 +60,7 @@ export default function Delivery({ itemData }) {
   );
 }
 
+// PropTypes necessary
 Delivery.propTypes = {
   itemData: PropTypes.arrayOf([PropTypes.array]).isRequired,
 };

@@ -1,20 +1,24 @@
 /**
  * @author: Sandro Damasceno <sdamasceno.dev@gmail.com>
- * @description:
+ * @description: Form for edit and registry a new Courier
  */
 
+// Importing dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 
+// Import the icon to be used
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
 import api from '~/services/api';
 
+// Import the pages used
 import AvatarInput from '~/pages/Courier/AvatarInput';
 
+// Import the style used
 import { Container } from './styles';
 
 export default function CourierProfile(props) {
@@ -24,6 +28,7 @@ export default function CourierProfile(props) {
   const { title } = dataItem;
   const { id, avatar_url } = dataItem.data;
 
+  // Register a Courier
   async function regCourier(data) {
     try {
       if (id === undefined) {
@@ -85,6 +90,7 @@ export default function CourierProfile(props) {
   );
 }
 
+// PropTypes necessary
 CourierProfile.propTypes = {
   location: PropTypes.arrayOf([PropTypes.oneOfType([])]).isRequired,
 };

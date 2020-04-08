@@ -3,6 +3,7 @@
  * @description: Page specific to show information about Recipient
  */
 
+// Importing dependencies
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 

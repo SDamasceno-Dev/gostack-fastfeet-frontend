@@ -26,6 +26,7 @@ export default function Courier() {
   const [search, setListSearch] = useState([]);
   const [query, setQuery] = useState();
 
+  // Get the list of all couriers in DB
   async function searchCourier(q) {
     try {
       const response = await api.get('courier', {
