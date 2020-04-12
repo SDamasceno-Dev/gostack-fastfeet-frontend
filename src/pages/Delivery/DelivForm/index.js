@@ -181,9 +181,9 @@ export default function DelivForm(props) {
 
 // PropTypes necessary
 DelivForm.propTypes = {
-  location: PropTypes.arrayOf([
-    PropTypes.number,
+  location: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.array,
+    PropTypes.number,
+    PropTypes.object,
   ]).isRequired,
 };

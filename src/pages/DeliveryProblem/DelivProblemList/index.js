@@ -47,7 +47,11 @@ DelivProblemList.propTypes = {
     switchParam: PropTypes.string,
     firstColumn: PropTypes.string,
   }).isRequired,
-  searchData: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array])
-  ).isRequired,
+  searchData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.symbol,
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };

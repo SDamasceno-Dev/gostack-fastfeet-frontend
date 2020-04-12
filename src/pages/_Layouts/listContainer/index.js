@@ -188,16 +188,18 @@ ListTemplate.propTypes = {
     inputPlaceholder: PropTypes.string,
     switchParam: PropTypes.string,
   }).isRequired,
-  searchData: PropTypes.arrayOf([
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.bool,
-      PropTypes.array,
-      PropTypes.func,
-      PropTypes.object,
-    ]),
+  searchData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.symbol,
+    PropTypes.object,
+    PropTypes.array,
   ]).isRequired,
-  searchFunction: PropTypes.func.isRequired,
-  searchQuery: PropTypes.func.isRequired,
+  searchFunction: PropTypes.func,
+  searchQuery: PropTypes.func,
+};
+
+ListTemplate.defaultProps = {
+  searchQuery: () => {},
+  searchFunction: () => {},
 };

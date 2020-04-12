@@ -4,7 +4,7 @@
  */
 
 // Importing dependencies
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
@@ -29,29 +29,84 @@ export default function Actions({
   const [visible, setVisible] = useState(false);
   const [modVisible, setModVisible] = useState(false);
 
-  // Change the visibility of submenu
-  function handleToggleVisible() {
-    setVisible(!visible);
-  }
-
   // Change the visibility of modal
   function handleToggleModVisible() {
     setModVisible(!modVisible);
   }
 
+  // Controls the visibility of Action Menu
+  const node = useRef();
+  const handleClickOutside = e => {
+    if (node.current.contains(e.target)) {
+      return;
+    }
+    setVisible(false);
+  };
+
+  useEffect(() => {
+    if (visible) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [visible]);
+
   // Async function to delete the registry
   async function handleDeleteItem() {
     const click = window.confirm('Deseja realmente excluir o registro?');
     try {
-      if (click) {
-        await api.delete(apiPath, { params: { idItem: searchItem.id } });
-        toast.success('Registro deletado!');
-        searchFunction();
+      if (switchActionParams === 'delivery') {
+        // Verifies if Delivery has problem registered. If true cannot be deleted
+        const response = await api.get(`/delivery/${searchItem.id}/problems`);
+        if (response.data.delivery.length > 0) {
+          alert(
+            'Este registro não pode ser cancelado pois possui problemas registrados. Caso precise deletar esse registro, entre em contato com o suporte técnico.'
+          );
+          return;
+        }
+
+        // Verifies if Delivery has altready ended. If true cannot be deleted
+        if (searchItem.end_date !== null) {
+          alert('Esta entrega não pode ser deletada pois já foi finalizada!');
+          return;
+        }
+      } else if (switchActionParams === 'courier') {
+        // Verifies if courier has delivery registered
+        const response = await api.get(`/courier/${searchItem.id}/deliveries`);
+        if (response.data.length > 0) {
+          alert(
+            'Este entregador possui encomendas registradas. Retire primeiro as encomendas para poder deletar seu registro.'
+          );
+          return;
+        }
       }
-    } catch (error) {
-      console.tron.log(error);
+
+      if (click) {
+        await api
+          .delete(apiPath, {
+            params: { idItem: searchItem.id },
+          })
+          .then(response => {
+            toast.success('Registro deletado!');
+            searchFunction();
+            console.tron.log(response);
+          })
+          .catch(error => {
+            toast.error(
+              `Registro não pode ser deletado!
+              ${error.response.data.error}`
+            );
+            console.tron.log(error.response);
+          });
+      }
+    } catch (err) {
+      console.tron.log(err);
       toast.error(
-        'O registro não foi deletado. Por favor, tente mais tarde ou informe ao suporte técnico.'
+        'O registro não pode ser deletado. Por favor, tente mais tarde ou informe ao suporte técnico.'
       );
     }
   }
@@ -110,6 +165,7 @@ export default function Actions({
                 <span>Editar</span>
               </Link>
             </ActionItem>
+            {/* <ActionItem onClick={handleDeleteItem}> */}
             <ActionItem onClick={handleDeleteItem}>
               <FaTrashAlt color="#DE3B3B" size={15} />
               <span>Excluir</span>
@@ -193,8 +249,8 @@ export default function Actions({
   }
 
   return (
-    <Container>
-      <ActionBtnMenu type="ActionBtnMenu" onClick={handleToggleVisible}>
+    <Container ref={node}>
+      <ActionBtnMenu type="ActionBtnMenu" onClick={() => setVisible(!visible)}>
         <FaEllipsisH color="#C6C6C6" size={15} />
       </ActionBtnMenu>
       {switchActionsButtons(switchActionParams)}
@@ -206,11 +262,12 @@ export default function Actions({
 Actions.propTypes = {
   searchItem: PropTypes.shape().isRequired,
   apiPath: PropTypes.string.isRequired,
-  searchFunction: PropTypes.func.isRequired,
+  searchFunction: PropTypes.func,
   id: PropTypes.string,
   switchActionParams: PropTypes.string.isRequired,
 };
 
 Actions.defaultProps = {
   id: '',
+  searchFunction: () => {},
 };

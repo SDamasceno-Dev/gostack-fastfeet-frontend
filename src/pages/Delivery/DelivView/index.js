@@ -39,7 +39,7 @@ export default function Delivery({ itemData }) {
         <div>
           <span id="label">Entrega: </span>
           <span>
-            {itemData.start_date !== null
+            {itemData.end_date !== null
               ? formatDate(itemData.end_date)
               : 'Sem informação'}
           </span>
@@ -62,5 +62,10 @@ export default function Delivery({ itemData }) {
 
 // PropTypes necessary
 Delivery.propTypes = {
-  itemData: PropTypes.arrayOf([PropTypes.array]).isRequired,
+  itemData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };

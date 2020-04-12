@@ -4,18 +4,9 @@
  */
 
 // Importing dependencies
-import { format, parseJSON } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
-import pt from 'date-fns/locale/pt';
+import { format } from 'date-fns';
 
 export default function formatDate(date) {
   // Formatting dates
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  return format(
-    utcToZonedTime(parseJSON(date), timezone),
-    "d'/'MM'/'yyyy 'às' hh'h'mm",
-    {
-      locale: pt,
-    }
-  );
+  return format(new Date(date), "dd'/'MM'/'yyyy 'às' hh'h'mm");
 }

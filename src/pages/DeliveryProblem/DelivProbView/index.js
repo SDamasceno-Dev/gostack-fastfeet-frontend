@@ -21,9 +21,10 @@ export default function DelivProbView({ itemData }) {
 
 // PropTypes necessary
 DelivProbView.propTypes = {
-  itemData: PropTypes.arrayOf([
-    PropTypes.number,
+  itemData: PropTypes.oneOfType([
     PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
     PropTypes.array,
   ]).isRequired,
 };

@@ -128,9 +128,9 @@ export default function RecipientForm(props) {
 
 // PropTypes necessary
 RecipientForm.propTypes = {
-  location: PropTypes.arrayOf([
-    PropTypes.number,
+  location: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.array,
+    PropTypes.number,
+    PropTypes.object,
   ]).isRequired,
 };
