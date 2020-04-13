@@ -99,3 +99,7 @@ $ yarn start
 ```
 
 :warning: **Obs:** Para que o módulo **Frontend**, do Sistema Fastfeet execute de forma correta é obrigatório que o módulo **Backend** esteja sendo executado o acesso aos bancos de dados (Postgres e Redis). Qualquer dúvida, basta acessar a documentação de como instalar e executar o **Backend** [aqui](#https://github.com/SDamasceno-Dev/gostack-fastfeet-backend)
+
+
+---
+Criado e editado por **Sandro de Oliveira Damasceno** :space_invader:   [github!](https://github.com/SDamasceno-Dev) :octocat:
