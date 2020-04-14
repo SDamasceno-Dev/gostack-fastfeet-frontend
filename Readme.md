@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/b9HrmqJ.png" target="_blank">
 </p>
 
-<p style="text-align: center; font-size: 28pt; font-weight: bold; text-decoration: underline; color: #812de5">Módulo Frontend</p>
+<p style="color: #812de5">Módulo Frontend</p>
 
 > Reconhecidamente a melhor solução para serviços de entrega, com foco exclusivamente no cliente e totalmente comprometida em superar expectativas.
 
@@ -308,7 +308,7 @@ Nessa área, além de exibir a listagem dos destinatários cadastrados, é poss�
 
 Para isso, basta clicar nesses **...** (3 pontos), localizados na coluna **Ações**, conforme indicado na figura abaixo
 
-![Screen#04 04](https://user-images.githubusercontent.com/58818002/79170319-67b27780-7dc5-11ea-82c8-44867a1c8afd.png)
+![Screen#04 04](https://user-images.githubusercontent.com/58818002/79183131-f84d7f80-7de6-11ea-86cb-b73b1d7d886c.png)
 
 Ao se clicar nesses **...** (3 pontos) será exibido um sub-menu, conforme a tela abaixo
 
