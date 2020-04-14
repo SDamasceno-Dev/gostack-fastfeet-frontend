@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/b9HrmqJ.png" target="_blank">
 </p>
 
-<span style="text-align: center">Módulo Frontend</span>
+<p align="center" style="font-weight: bold">Módulo Frontend</p>
 
 > Reconhecidamente a melhor solução para serviços de entrega, com foco exclusivamente no cliente e totalmente comprometida em superar expectativas.
 
