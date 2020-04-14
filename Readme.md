@@ -172,7 +172,7 @@ Para se efetuar o cadastro de uma encomenda, é muito simples e basta seguir os 
 
   Cadastro efetuado com sucesso! :tada:
 
-Abaixo existe um vídeo demonstrando o cadastro de um entregador
+Abaixo existe um vídeo demonstrando o cadastro de uma encomenda
 
 ![#03_CadEncomenda](https://user-images.githubusercontent.com/58818002/79180878-6c852480-7de1-11ea-99d5-39606d5b6e94.gif)
 
@@ -209,7 +209,9 @@ Com as seguintes opções:
 
 :heavy_exclamation_mark: **Regras de negócio**
 
-* Uma encomenda que possua problemas cadastrados ou que tenha sido entregue, não pode ser mais excluída do Sistema Fastfeet.
+* Uma encomenda que possua problemas cadastrados ou que tenha sido entregue, não pode ser mais excluída do Sistema Fastfeet;
+* Quando uma encomenda é cadastrada no sistema, o entregador o qual está vinculado a esta encomenda receberá um e-mail informado que existe uma nova encomenda cadastrada para ele retirar;
+* Quando uma encomenda é cancelada no sistema, o entregador o qual está vinculado a esta encomenda receberá um e-mail informado que a encomenda cadastrada foi cancelada;
 
 
 # :small_blue_diamond: Seção "Entregadores"
