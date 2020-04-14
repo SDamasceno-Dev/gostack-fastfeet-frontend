@@ -200,9 +200,11 @@ Ao se clicar nesses **...** (3 pontos) será exibido um sub-menu, conforme a tel
 
 Com as seguintes opções:
 
-  * **Visualizar**: Permite a visualização da encomenda, exibindo os detalhes dela. Um exemplo dessa visualização é exibido na figura abaixo
+  * **Visualizar**: Permite a visualização da encomenda, exibindo os detalhes dela.
 
-![Screen#02 06](https://user-images.githubusercontent.com/58818002/79182607-94768700-7de5-11ea-9251-54803a33f4cd.png)
+Caso a visualização seja feita de encomenda que foi corretamente entregue, é possível tbm perceber a assinatura dessa encomenda. Um exemplo dessa visualização é exibido na figura abaixo
+
+![Screen#02 06](https://user-images.githubusercontent.com/58818002/79186573-68acce80-7df0-11ea-97ed-e72e9e3d2356.png)
 
   * **Editar**: Permite a edição dos dados da encomenda;
   * **Excluir**: Permite a exclusão do registro da encomenda cadastrada.
