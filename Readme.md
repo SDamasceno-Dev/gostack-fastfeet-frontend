@@ -1,19 +1,19 @@
-<p align="center" target="_blank">
-  <img src="https://i.imgur.com/b9HrmqJ.png" target="_blank">
+<p align="center">
+  <img src="https://i.imgur.com/b9HrmqJ.png">
 </p>
 
 # Módulo Frontend
 
 > Reconhecidamente a melhor solução para serviços de entrega, com foco exclusivamente no cliente e totalmente comprometida em superar expectativas.
 
-<p align="center" target="_blank">
-  <img src="https://img.shields.io/badge/Version-0.1-blueviolet?style=plastic" target="_blank">
-  <img src="https://img.shields.io/badge/ReactJS-%3E%3D16.13.0-blueviolet?style=plastic&logo=React" target="_blank">
-  <img src="https://img.shields.io/badge/React%20Redux-%3E%3D7.2.0-blueviolet?style=plastic&logo=Redux" target="_blank">
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-0.1-blueviolet?style=plastic">
+  <img src="https://img.shields.io/badge/ReactJS-%3E%3D16.13.0-blueviolet?style=plastic&logo=React">
+  <img src="https://img.shields.io/badge/Redux-%3E%3D4.0.5-blueviolet?style=plastic&logo=Redux">
 </p>
 
-<p align="center" target="_blank">
-:link:| &nbsp;<a href="#page_with_curl-Descrição" target="_blank">Descrição</a> &nbsp;  | &nbsp; <a href="#books-Bibliotecas">Bibliotecas</a> &nbsp; | &nbsp; <a href="#shell-Ambiente-de-teste-e-uso">Ambiente de teste e uso</a> &nbsp; | &nbsp; <a href="#floppy_disk-Como-Instalar">Como instalar</a> &nbsp; | &nbsp; <a href="#mortar_board-Como-usar">Como usar</a> &nbsp; | &nbsp; <a href="https://github.com/SDamasceno-Dev/gostack-fastfeet-frontend/blob/master/LICENSE.MD">Licença</a> &nbsp; |</p>
+<p align="center">
+:link:| &nbsp;<a href="#page_with_curl-Descrição">Descrição</a> &nbsp;  | &nbsp; <a href="#books-Bibliotecas">Bibliotecas</a> &nbsp; | &nbsp; <a href="#shell-Ambiente-de-teste-e-uso">Ambiente de teste e uso</a> &nbsp; | &nbsp; <a href="#floppy_disk-Como-Instalar">Como instalar</a> &nbsp; | &nbsp; <a href="#mortar_board-Como-usar">Como usar</a> &nbsp; | &nbsp; <a href="https://github.com/SDamasceno-Dev/gostack-fastfeet-frontend/blob/master/LICENSE.MD">Licença</a> &nbsp; |</p>
 
 # :page_with_curl: Descrição
 
@@ -35,33 +35,33 @@ Abaixo estão listadas as dependências, com a sua respectiva versão, utilizada
 
 <details><summary>Dependências</summary>
   <ul>
-    <li><a href="https://www.npmjs.com/package/@rocketseat/unform" target="_blank">@rocketseat/unform</a> [^1.6.2]</li>
-    <li><a href="https://www.npmjs.com/package/@testing-library/jest-dom" target="_blank">@testing-library/jest-dom</a> [^4.2.4]</li>
-    <li><a href="https://www.npmjs.com/package/@testing-library/react" target="_blank">@testing-library/react</a> [^9.3.2]</li>
-    <li><a href="https://www.npmjs.com/package/@testing-library/user-event" target="_blank">@testing-library/user-event</a> [^7.1.2]</li>
-    <li><a href="https://www.npmjs.com/package/axios" target="_blank">axios</a> [^0.19.2]</li>
-    <li><a href="https://www.npmjs.com/package/date-fns" target="_blank">date-fns</a> [^2.11.0]</li>
-    <li><a href="https://www.npmjs.com/package/date-fns-tz" target="_blank">date-fns-tz</a> [^1.0.10]</li>
-    <li><a href="https://www.npmjs.com/package/history" target="_blank">history</a> [^4.10.1]</li>
-    <li><a href="https://www.npmjs.com/package/immer" target="_blank">immer</a> [^6.0.1]</li>
-    <li><a href="https://www.npmjs.com/package/polished" target="_blank">polished</a> [^3.4.4]</li>
-    <li><a href="https://www.npmjs.com/package/prop-types" target="_blank">prop-types</a> [^15.7.2]</li>
-    <li><a href="https://www.npmjs.com/package/react" target="_blank">react</a> [^16.13.0]</li>
-    <li><a href="https://www.npmjs.com/package/react-dom" target="_blank">react-dom</a> [^16.13.0]</li>
-    <li><a href="https://www.npmjs.com/package/react-icons" target="_blank">react-icons</a> [^3.9.0]</li>
-    <li><a href="https://www.npmjs.com/package/react-redux" target="_blank">react-redux</a> [^7.2.0]</li>
-    <li><a href="https://www.npmjs.com/package/react-router-dom" target="_blank">react-router-dom</a> [^5.1.2]</li>
-    <li><a href="https://www.npmjs.com/package/react-scripts" target="_blank">react-scripts</a> "3.4.0]</li>
-    <li><a href="https://www.npmjs.com/package/react-select" target="_blank">react-select</a> [^3.0.8]</li>
-    <li><a href="https://www.npmjs.com/package/react-toastify" target="_blank">react-toastify</a> [^5.5.0]</li>
-    <li><a href="https://www.npmjs.com/package/reactotron-react-js" target="_blank">reactotron-react-js</a> [^3.3.7]</li>
-    <li><a href="https://www.npmjs.com/package/reactotron-redux" target="_blank">reactotron-redux</a> [^3.1.2]</li>
-    <li><a href="https://www.npmjs.com/package/reactotron-redux-saga" target="_blank">reactotron-redux-saga</a> [^4.2.3]</li>
-    <li><a href="https://www.npmjs.com/package/redux" target="_blank">redux</a> [^4.0.5]</li>
-    <li><a href="https://www.npmjs.com/package/redux-persist" target="_blank">redux-persist</a> [^6.0.0]</li>
-    <li><a href="https://www.npmjs.com/package/redux-saga" target="_blank">redux-saga</a> [^1.1.3]</li>
-    <li><a href="https://www.npmjs.com/package/styled-components" target="_blank">styled-components</a> [^5.0.1]</li>
-    <li><a href="https://www.npmjs.com/package/yup" target="_blank">yup</a> [^0.28.3]</li>
+    <li><a href="https://www.npmjs.com/package/@rocketseat/unform">@rocketseat/unform</a> [^1.6.2]</li>
+    <li><a href="https://www.npmjs.com/package/@testing-library/jest-dom">@testing-library/jest-dom</a> [^4.2.4]</li>
+    <li><a href="https://www.npmjs.com/package/@testing-library/react">@testing-library/react</a> [^9.3.2]</li>
+    <li><a href="https://www.npmjs.com/package/@testing-library/user-event">@testing-library/user-event</a> [^7.1.2]</li>
+    <li><a href="https://www.npmjs.com/package/axios">axios</a> [^0.19.2]</li>
+    <li><a href="https://www.npmjs.com/package/date-fns">date-fns</a> [^2.11.0]</li>
+    <li><a href="https://www.npmjs.com/package/date-fns-tz">date-fns-tz</a> [^1.0.10]</li>
+    <li><a href="https://www.npmjs.com/package/history">history</a> [^4.10.1]</li>
+    <li><a href="https://www.npmjs.com/package/immer">immer</a> [^6.0.1]</li>
+    <li><a href="https://www.npmjs.com/package/polished">polished</a> [^3.4.4]</li>
+    <li><a href="https://www.npmjs.com/package/prop-types">prop-types</a> [^15.7.2]</li>
+    <li><a href="https://www.npmjs.com/package/react">react</a> [^16.13.0]</li>
+    <li><a href="https://www.npmjs.com/package/react-dom">react-dom</a> [^16.13.0]</li>
+    <li><a href="https://www.npmjs.com/package/react-icons">react-icons</a> [^3.9.0]</li>
+    <li><a href="https://www.npmjs.com/package/react-redux">react-redux</a> [^7.2.0]</li>
+    <li><a href="https://www.npmjs.com/package/react-router-dom">react-router-dom</a> [^5.1.2]</li>
+    <li><a href="https://www.npmjs.com/package/react-scripts">react-scripts</a> "3.4.0]</li>
+    <li><a href="https://www.npmjs.com/package/react-select">react-select</a> [^3.0.8]</li>
+    <li><a href="https://www.npmjs.com/package/react-toastify">react-toastify</a> [^5.5.0]</li>
+    <li><a href="https://www.npmjs.com/package/reactotron-react-js">reactotron-react-js</a> [^3.3.7]</li>
+    <li><a href="https://www.npmjs.com/package/reactotron-redux">reactotron-redux</a> [^3.1.2]</li>
+    <li><a href="https://www.npmjs.com/package/reactotron-redux-saga">reactotron-redux-saga</a> [^4.2.3]</li>
+    <li><a href="https://www.npmjs.com/package/redux">redux</a> [^4.0.5]</li>
+    <li><a href="https://www.npmjs.com/package/redux-persist">redux-persist</a> [^6.0.0]</li>
+    <li><a href="https://www.npmjs.com/package/redux-saga">redux-saga</a> [^1.1.3]</li>
+    <li><a href="https://www.npmjs.com/package/styled-components">styled-components</a> [^5.0.1]</li>
+    <li><a href="https://www.npmjs.com/package/yup">yup</a> [^0.28.3]</li>
   </ul>
 </details>
 
@@ -83,7 +83,7 @@ Version: 81.0.4044.92 (Official Build) (64-bit)
 
 # :floppy_disk: Como Instalar
 
-Para que após a clonagem do Github este módulo funcione de forma correta, serão necessárias algumas ações para que toda a estrutura fique adequada para o seu bom funcionamento. Antes de listar os passos necessários para o preparo do ambiente, é necessário que o computador onde irá rodar este módulo, já tenha instalado e devidamente configurado o [Git](https://git-scm.com/), [Node.JS >=v12.14.0 LTS](https://nodejs.org/en/) e o [Yarn >=v1.22.4](https://yarnpkg.com/).
+Para que após a clonagem do Github este módulo funcione de forma correta, serão necessárias algumas ações para que toda a estrutura fique adequada para o seu bom funcionamento. Antes de listar os passos necessários para o preparo do ambiente, é necessário que o computador onde irá rodar este módulo, já tenha instalado e devidamente configurado o [Git](https://git-scm.com/), [Node.JS >=v12.14.0 LTS](https://nodejs.org/en/) e o [Yarn >=v1.22.4](https://yarnpkg.com/). Todos esses pacotes podem ser instalados utilizando um **Gerenciador de pacotes** compatível com o seu sistema operacional ([Homebrew](https://brew.sh/) para macOS, [Chocolatey](https://chocolatey.org/) para Windows).
 
 Com essa estrutura pronta, pode-se iniciar o preparo do ambiente para se rodar este módulo Frontend do sistema FastFeet.
 
@@ -137,7 +137,7 @@ O módulo Frontend possui 5 grandes seções, vamos analisar e entender como fun
 
 ![Screen#01](https://user-images.githubusercontent.com/58818002/79156329-0d0b2280-7da9-11ea-9036-6f8e47b4d33d.png)
 
-Como se pode perceber essa seção tem basicamente a função de permitir o acesso do usuário ao Sistema Fastfeet.
+Como se pode perceber essa seção tem basicamente a função de permitir o acesso do usuário ao módulo Frontend do Sistema Fastfeet.
 
 Para que esse acesso ocorra, é necessário a entrada de 2 informações, o e-mail e a senha cadastrados no sistema.
 
