@@ -17,17 +17,15 @@
 
 # :page_with_curl: Descrição
 
-O módulo Frontend do sistema FastFeet é o responsável por disponibilizar o módulo de gerenciamento do Administrador.
+O módulo Frontend do Sistema Fastfeet é o responsável por disponibilizar o módulo de Gerenciamento do Administrador.
 
 Por meio desse módulo o Administrador pode, dentre outras coisas:
 
-<ul>
-<li>Pesquisar, cadastrar, excluir e editar encomendas;</li>
-<li>Pesquisar, cadastrar, excluir e editar entregadores;</li>
-<li>Pesquisar, cadastrar, excluir e editar clientes;</li>
-<li>Acompanhar o status de cada uma das encomendas;</li>
-<li>Verificar as situações que causaram problemas, e cancelar a entrega da encomenda caso necessário;</li>
-</ul>
+* Pesquisar, cadastrar, excluir e editar encomendas;
+* Pesquisar, cadastrar, excluir e editar entregadores;
+* Pesquisar, cadastrar, excluir e editar clientes;
+* Acompanhar o status de cada uma das encomendas;
+* Verificar as situações que causaram problemas, e cancelar a entrega da encomenda caso necessário;
 
 # :books: Bibliotecas
 
@@ -74,7 +72,7 @@ Visual Studio Code
 Version: 1.44.0
 ```
 
-e testado utilizando o seguinte browser
+testado e utilizado com o seguinte browser
 
 ```bash
 Google Chrome
@@ -83,16 +81,16 @@ Version: 81.0.4044.92 (Official Build) (64-bit)
 
 # :floppy_disk: Como Instalar
 
-Para que após a clonagem do Github este módulo funcione de forma correta, serão necessárias algumas ações para que toda a estrutura fique adequada para o seu bom funcionamento. Antes de listar os passos necessários para o preparo do ambiente, é necessário que o computador onde irá rodar este módulo, já tenha instalado e devidamente configurado o [Git](https://git-scm.com/), [Node.JS >=v12.14.0 LTS](https://nodejs.org/en/) e o [Yarn >=v1.22.4](https://yarnpkg.com/). Todos esses pacotes podem ser instalados utilizando um **Gerenciador de pacotes** compatível com o seu sistema operacional ([Homebrew](https://brew.sh/) para macOS, [Chocolatey](https://chocolatey.org/) para Windows).
+Para que, após a clonagem do Github, este módulo funcione de forma correta, serão necessárias algumas ações para que toda a estrutura fique adequada para o seu bom funcionamento. Antes de listar os passos necessários para o preparo do ambiente, é necessário que o computador onde irá rodar este módulo, já tenha instalado e devidamente configurado o [Git](https://git-scm.com/), [Node.JS >=v12.14.0 LTS](https://nodejs.org/en/) e o [Yarn >=v1.22.4](https://yarnpkg.com/). Todos esses pacotes podem ser instalados utilizando um **Gerenciador de pacotes** compatível com o seu sistema operacional ([Homebrew](https://brew.sh/) para macOS, [Chocolatey](https://chocolatey.org/) para Windows).
 
-Com essa estrutura pronta, pode-se iniciar o preparo do ambiente para se rodar este módulo Frontend do sistema FastFeet.
+Com essa estrutura pronta, pode-se iniciar o preparo do ambiente para se rodar este módulo Frontend do Sistema Fastfeet.
 
 **1º Clonar o respositório**
 
-Para se efetuar a clonagem desse repositório, crie uma pasta onde for o local adequado no seu computador, abra uma sessão no terminal do computador, de dentro dessa pasta criada, e execute o seguinte comando:
+Para se efetuar a clonagem desse repositório, de dentro da pasta raiz criada lá no [Backend](https://github.com/SDamasceno-Dev/gostack-fastfeet-backend), abra uma sessão no terminal do computador, de dentro dessa pasta, e execute o seguinte comando:
 
 ```bash
-# Clona a pasta Frontend do sistema FastFeet
+# Clona a pasta Frontend do Sistema Fastfeet
 $ git clone https://github.com/SDamasceno-Dev/gostack-fastfeet-frontend
 ```
 
@@ -123,7 +121,7 @@ Após a instalação das dependências necessárias, basta iniciar o módulo Fro
 $ yarn start
 ```
 
-Com isso, o servidor web irá se inicializar, e automaticamente uma nova janela do seu navegador irá se abrir exibindo a tela de login do Sistema Fastfeet.
+Com isso, o servidor web irá se inicializar, e automaticamente uma nova janela do seu navegador padrão irá se abrir exibindo a tela de login do Sistema Fastfeet.
 
 :warning: **Obs:** Para que o módulo **Frontend**, do Sistema Fastfeet execute de forma correta é obrigatório que o módulo **Backend** esteja sendo executado e tendo acesso aos bancos de dados (Postgres e Redis).
 
@@ -139,7 +137,7 @@ O módulo Frontend possui 5 grandes seções, vamos analisar e entender como fun
 
 Como se pode perceber essa seção tem basicamente a função de permitir o acesso do usuário ao módulo Frontend do Sistema Fastfeet.
 
-Para que esse acesso ocorra, é necessário a entrada de 2 informações, o e-mail e a senha cadastrados no sistema.
+Para que esse acesso ocorra, é necessário a entrada de 2 informações, o **E-MAIL** e a **SENHA** cadastrados no sistema.
 
 Observe abaixo uma animação demonstrando como efetuar o login no Sistema Fastfeet
 
@@ -155,17 +153,17 @@ Assim que o login é efetuado com sucesso, será exibida a tela na Seção "Gere
 
 ![Screen#02 00](https://user-images.githubusercontent.com/58818002/79161025-2adc8580-7db1-11ea-9159-b233f5a7c8db.png)
 
-Nessa Seção que são acompanhadas as diversas situações das encomendas cadastradas.
+Nessa seção é onde são acompanhadas as diversas situações das encomendas cadastradas.
 
-Para que encomendas sejam cadastradas corretamente, é necessário antes sejam cadastrados os **Clientes**, **Entregadores** e as próprias **Encomendas**.
+Para que uma encomenda seja cadastrada corretamente, é necessário que antes já se tenham cadastrados os **Clientes**, **Entregadores** e as próprias **Encomendas**.
 
 Uma vez que uma ou mais encomendas estejam cadastradas no sistema, elas estarão listadas, conforme pode ser visualizado na figura a seguir
 
 ![Screen#02 01](https://user-images.githubusercontent.com/58818002/79178451-b834cf80-7ddb-11ea-834e-733b746688b1.png)
 
-Essa listagem exibe todas as informações básicas sobre a encomenda, além de exibir o Destinatário, o Entregador responsável, a Cidade, Estado e o Status dessa encomenda.
+Essa listagem exibe todas as informações básicas sobre a encomenda, como os dados do Destinatário, do Entregador responsável, da Cidade, do Estado e o Status dessa encomenda.
 
-Está área é dividida em 3 grandes partes conforme mostrado abaixo
+Está seção é dividida em 3 grandes partes conforme mostrado abaixo
 
 ![Screen#02 02](https://user-images.githubusercontent.com/58818002/79180291-f633f280-7ddf-11ea-8829-6ab7d58073c2.png)
 
@@ -173,9 +171,9 @@ As áreas indicadas são as seguintes:
 
 * **1- Pesquisa de encomendas**
 
-  Nessa área é possível efetuar a pesquisa das encomendas cadastradas inserindo o nome ou parte do nome da encomenda. Ao clicar na figura da lupa :mag_right: o resultado será mostrado na área indicada com o número **3- Listagem das encomendas**
+  Nessa área é possível efetuar a pesquisa das encomendas cadastradas inserindo o nome ou parte do nome da encomenda. Ao clicar no botão com a figura da lupa :mag: o resultado será mostrado na área indicada com o número **3- Listagem das encomendas**
 
-  Caso o campo "Buscar por encomendas" esteja vazio e a lupa é clicada para se efetuar a pesquisa, serão retornadas todas as encomendas cadastradas no sistema.
+  Caso o campo "Buscar por encomendas" esteja vazio e se efetue uma pesquisa, serão retornadas todas as encomendas cadastradas no sistema.
 
 * **2- Cadastro das encomendas**
 
@@ -192,14 +190,14 @@ Para se efetuar o cadastro de uma encomenda, é muito simples e basta seguir os 
 
 Cadastro efetuado com sucesso! :tada:
 
-:pushpin: **Obs.**: Para que os Destinatário e o Entregador possam ser selecionados, é necessários que eles tenha sido cadastrados nos Sistema Fastfeet. Nas próximas seções será demonstrado como efetuar esses cadastros.
+:pushpin: **Obs.**: Para que o Destinatário e o Entregador possam ser selecionados, é necessários que eles tenha sido previamente cadastrados nos Sistema Fastfeet. Nas próximas seções será demonstrado como efetuar esses cadastros.
 
-Abaixo existe um vídeo demonstrando o cadastro de uma encomenda
+Abaixo existe uma animação demonstrando o cadastro de uma encomenda
 
 ![#03_CadEncomenda](https://user-images.githubusercontent.com/58818002/79180878-6c852480-7de1-11ea-99d5-39606d5b6e94.gif)
 
 * **3- Listagem das encomendas**
-Nessa área, além de exibir a listagem das encomendas cadastradas, existem duas colunas importantes, a coluna **Status** e a coluna **Ações**.
+Nessa área, além de exibir a listagem das encomendas cadastradas, existem outras duas colunas importantes, a coluna **Status** e a coluna **Ações**.
 
 ### Coluna Status
 
@@ -210,7 +208,7 @@ Existem 4 tipos de status:
 |Status|Explicação do status|
 |:---|:---|
 |![Screen#02 01 1](https://user-images.githubusercontent.com/58818002/79181366-9428bc80-7de2-11ea-8c6b-18a8c839bc0e.png) | Quando uma encomenda estiver no status de **Pendente**, significa que ela foi cadastrada no sistema e ainda não foi retirada pelo entregador |
-|![Screen#02 01 2](https://user-images.githubusercontent.com/58818002/79181368-94c15300-7de2-11ea-8b5d-2f83442e73d2.png)| Quando a encomenda estiver no status de **Retirada**, significa que o entregador já efetuou a retirada da encomenda para a tentativa da entrega.|
+|![Screen#02 01 2](https://user-images.githubusercontent.com/58818002/79181368-94c15300-7de2-11ea-8b5d-2f83442e73d2.png)| Quando a encomenda estiver no status de **Retirada**, significa que o entregador já efetuou a retirada da encomenda para a realização da entrega.|
 |![Screen#02 01 3](https://user-images.githubusercontent.com/58818002/79181369-9559e980-7de2-11ea-9fea-333f4587e2e6.png)| Quando a encomenda estiver no status de **Entregue**, significa que o entregador já efetuou a entrega ao destinatário. |
 |![Screen#02 01 4](https://user-images.githubusercontent.com/58818002/79181371-95f28000-7de2-11ea-8380-9635f2240fe7.png)| Quando a encomenda estiver no status de **Cancelada**, significa que o **Administrador** do sistema considerou que a entrega, devido aos problemas cadastrados, não pode ser mais realizada.|
 
@@ -228,9 +226,11 @@ Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme a tela abaix
 
 com as seguintes opções:
 
-* **Visualizar**: Permite a visualização da encomenda, exibindo os detalhes da mesma.
+* **Visualizar**: Permite a visualização dos detalhes da encomenda.
 
-    Caso a visualização seja feita de encomenda que foi corretamente entregue, é possível tbm visualizar a assinatura capturada dessa entrega. Um exemplo dessa visualização é exibido na figura abaixo
+    Caso a visualização seja feita de uma encomenda que foi corretamente entregue, é possível também visualizar a assinatura capturada dessa entrega.
+
+    Um exemplo dessa visualização é exibido na figura abaixo
 
 ![Screen#02 06](https://user-images.githubusercontent.com/58818002/79186573-68acce80-7df0-11ea-97ed-e72e9e3d2356.png)
 
@@ -241,7 +241,7 @@ com as seguintes opções:
 
 * Uma encomenda que possua problemas cadastrados ou que tenha sido entregue, não pode ser mais excluída do Sistema Fastfeet;
 * Quando uma encomenda é cadastrada no sistema, o entregador o qual está vinculado a esta encomenda receberá um e-mail informado que existe uma nova encomenda cadastrada para ele retirar;
-* Quando uma encomenda é cancelada no sistema, o entregador o qual está vinculado a esta encomenda receberá um e-mail informado que a encomenda cadastrada foi cancelada;
+* Quando uma encomenda é cancelada no sistema, o entregador o qual está vinculado a esta encomenda, receberá um e-mail informado que a entrega dessa encomenda foi cancelada;
 
 # :rocket: Seção "Entregadores"
 
@@ -261,9 +261,9 @@ As áreas indicadas são as seguintes:
 
 * **1- Pesquisa de entregadores**
 
-  Nessa área é possível efetuar a pesquisa dos entregadores cadastrados inserindo o nome ou parte do nome. Ao clicar na figura da lupa :mag_right: o resultado será mostrado na área indicada com o número **3- Listagem dos entregadores**.
+  Nessa área é possível efetuar a pesquisa dos entregadores cadastrados inserindo o nome ou parte do nome. Ao clicar no botão com a figura da lupa :mag: o resultado será mostrado na área indicada com o número **3- Listagem dos entregadores**.
 
-  Caso o campo "Buscar por entregadores" esteja vazio e se clique na lupa, a pesquisa irá retornar todos os entregadores cadastrados no sistema.
+  Caso o campo "Buscar por entregadores" esteja vazio e se efetue uma pesquisa, serão retornados todos os entregadores cadastrados no sistema.
 
 * **2- Cadastro dos entregadores**
 
@@ -280,7 +280,7 @@ Para se efetuar o cadastro de um entregador, é muito simples e basta seguir os 
 
   Cadastro efetuado com sucesso! :tada:
 
-Abaixo existe um vídeo demonstrando o cadastro de um entregador
+Abaixo existe uma animação demonstrando o cadastro de um entregador
 
 ![#02_CadEntregador](https://user-images.githubusercontent.com/58818002/79165441-84e14900-7db9-11ea-8b82-6194a390da96.gif)
 
@@ -291,7 +291,7 @@ Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações*
 
 ![Screen#03 04](https://user-images.githubusercontent.com/58818002/79168608-b9a4ce80-7dc0-11ea-8a84-9ac44a8d2cbb.png)
 
-Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme exibido na tela abaixo,
+Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme exibido nessa outra tela,
 
 ![Screen#03 05](https://user-images.githubusercontent.com/58818002/79168763-156f5780-7dc1-11ea-8bda-4f67650dee64.png)
 
@@ -303,7 +303,7 @@ com as seguintes opções:
 :heavy_exclamation_mark: **Regras de negócio**
 
 * Dois entregadores não podem ter o mesmo e-mail no cadastro. Caso se tente cadastrar um entregador com um e-mail já existente no Banco de Dados, será retornado um erro;
-* O registro de um entregador só pode ser excluído caso não existam entregas vinculadas ao seu registro. Caso existam encomendas, para se excluir o registro desse entregador, é necessário primeiro retirar todas as encomendas vinculadas a esse entregador antes de poder excluir o seu registro.
+* O registro de um entregador só pode ser excluído caso não existam entregas vinculadas ao seu registro. Caso existam encomendas, para se excluir o registro desse entregador, é necessário primeiro retirar todas as encomendas vinculadas a esse entregador antes de poder excluir o seu registro. Caso esse entregador tenha entregas concluídas em seus registros, ele não poderá ser mais excluído do sistema.
 
 # :rocket: Seção "Destinatários"
 
@@ -323,8 +323,8 @@ As áreas indicadas são as seguintes:
 
 * **1- Pesquisa de destinatários**
 
-  Nessa área é possível efetuar a pesquisa dos destinatários cadastrados inserindo o nome ou parte do nome. Ao clicar na figura da lupa :mag_right: o resultado será mostrado na área indicada com o número **3- Listagem dos destinatários**
-  Caso o campo "Buscar por destinatários" esteja vazio e se clique na lupa, a pesquisa irá retornar todos os destinatários cadastrados no sistema.
+  Nessa área é possível efetuar a pesquisa dos destinatários cadastrados, inserindo o nome ou parte do nome no campo de pesquisa. Ao clicar no botão com a figura da lupa :mag: o resultado será mostrado na área indicada com o número **3- Listagem dos destinatários**
+  Caso o campo "Buscar por destinatários" esteja vazio e se efetue uma pesquisa, serão retornados todos os destinatários cadastrados no sistema.
 
 * **2- Cadastro dos destinatários**
 
@@ -332,36 +332,36 @@ As áreas indicadas são as seguintes:
 
   ![Screen#04 03](https://user-images.githubusercontent.com/58818002/79169771-ad6e4080-7dc3-11ea-919b-59a45bacc2b6.png)
 
-Para se efetuar o cadastro de um destinatário, é muito simples e basta seguir os seguintes passos:
+Para se efetuar o cadastro de um destinatário, é muito simples. Basta seguir os seguintes passos:
 
 * Preencher todos os campos existentes na tela de formulário com os dados do recipiente;
 * Clicar em Salvar
 
 Cadastro efetuado com sucesso! :tada:
 
-Abaixo existe um vídeo demonstrando o cadastro de um destinatário
+Abaixo existe uma animação demonstrando o cadastro de um destinatário
 
 ![#03_CadDestinatario](https://user-images.githubusercontent.com/58818002/79170097-be6b8180-7dc4-11ea-8012-bf75e5f05ba5.gif)
+
+:heavy_exclamation_mark: **Regras de negócio**
+
+* No cadastro de um destinatário **Todos** os campos são obrigatórios. Caso o campo **Complemento** não exista, colocar um **-** ou inserir **não existe** como informação.
 
 * **3- Listagem dos destinatários**
 Nessa área, além de exibir a listagem dos destinatários cadastrados, é possível realizar algumas ações para cada um desses registros.
 
   Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações**, conforme indicado na figura abaixo
 
-![Screen#04 04](https://user-images.githubusercontent.com/58818002/79183131-f84d7f80-7de6-11ea-86cb-b73b1d7d886c.png)
+  ![Screen#04 04](https://user-images.githubusercontent.com/58818002/79183131-f84d7f80-7de6-11ea-86cb-b73b1d7d886c.png)
 
   Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme a tela abaixo
 
-![Screen#04 05](https://user-images.githubusercontent.com/58818002/79170384-9e888d80-7dc5-11ea-953f-523d389f8990.png)
+  ![Screen#04 05](https://user-images.githubusercontent.com/58818002/79170384-9e888d80-7dc5-11ea-953f-523d389f8990.png)
 
-Com as seguintes opções:
+  com as seguintes opções:
 
 * **Editar**: Permite a edição dos dados do entregador;
 * **Excluir**: Permite a exclusão do registro do entregador cadastrado.
-
-:heavy_exclamation_mark: **Regras de negócio**
-
-* No cadastro de um destinatário **Todos** os campos são obrigatórios. Caso o campo **Complemento** não exista, colocar um **-** ou inserir **não existe** como informação.
 
 # :rocket: Seção "Problemas na entrega"
 
@@ -375,7 +375,7 @@ A figura abaixo apresenta alguns problemas cadastrados
 
 ![Screen#05 01](https://user-images.githubusercontent.com/58818002/79173193-3473e680-7dcd-11ea-99d3-af97aca66a29.png)
 
-Esta área tem somente uma grande área, que é onde são exibidos os problemas que ocorreram com as entregas.
+Esta seção tem somente uma grande área, que é onde são exibidos os problemas que ocorreram com as entregas.
 
 Conforme os problemas são exibidos, é possível realizar algumas ações para cada um desses registros.
 
@@ -394,6 +394,8 @@ com as seguintes opções:
 ![Screen#05 04](https://user-images.githubusercontent.com/58818002/79174936-a3a00980-7dd2-11ea-86e7-96104f64979a.png)
 
 * **Cancelar encomenda**: Permite a exclusão do registro da entrega. Esta ação tem como objetivo, mediante a algum problema crítico que impeça a realização da entrega, o administrador do sistema poder decidir pelo cancelamento dela.
+
+No momento que uma entrega é cancelada, o entregador vinculado a esta encomenda irá receber um e-mail informando do cancelamento da entrega dessa encomenda.
 
 Assim, todo o conteúdo referente ao Módulo Frontend do Sistema Fastfeet está concluído. Caso teha interesse, pode conhecer o Módulo Mobile do Sistema Fastfeet clicando [aqui](https://github.com/SDamasceno-Dev/gostack-fastfeet-mobile)
 
