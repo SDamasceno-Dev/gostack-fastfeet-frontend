@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-:link:| &nbsp;<a href="#page_with_curl-Descrição">Descrição</a> &nbsp;  | &nbsp; <a href="#books-Bibliotecas">Bibliotecas</a> &nbsp; | &nbsp; <a href="#shell-Ambiente-de-desenvolvimento,-teste-e-uso">Ambiente de teste e uso</a> &nbsp; | &nbsp; <a href="#floppy_disk-Como-Instalar">Como instalar</a> &nbsp; | &nbsp; <a href="#mortar_board-Como-usar">Como usar</a> &nbsp; | &nbsp; <a href="https://github.com/SDamasceno-Dev/gostack-fastfeet-frontend/blob/master/LICENSE.MD">Licença</a> &nbsp; |</p>
+:link:| &nbsp;<a href="#page_with_curl-Descrição">Descrição</a> &nbsp;  | &nbsp; <a href="#books-Bibliotecas">Bibliotecas</a> &nbsp; | &nbsp; <a href="#shell-ambiente-de-desenvolvimento-teste-e-uso">Ambiente de teste e uso</a> &nbsp; | &nbsp; <a href="#floppy_disk-Como-Instalar">Como instalar</a> &nbsp; | &nbsp; <a href="#mortar_board-Como-usar">Como usar</a> &nbsp; | &nbsp; <a href="https://github.com/SDamasceno-Dev/gostack-fastfeet-frontend/blob/master/LICENSE.MD">Licença</a> &nbsp; |</p>
 
 # :page_with_curl: Descrição
 
