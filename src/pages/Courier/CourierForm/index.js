@@ -49,7 +49,9 @@ export default function CourierProfile(props) {
       }
     } catch (error) {
       console.tron.log(error);
-      toast.error('Erro de conexão com o Banco de dados <db:courier>!');
+      toast.error(
+        'Erro ao tentar registrar o entregador! Verifique os dados inseridos e tente novamente. Se o erro persistir, entre em contato com o suporte técnico.'
+      );
     }
   }
 
