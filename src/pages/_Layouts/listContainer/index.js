@@ -4,13 +4,19 @@
  */
 
 // Import dependencies
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
 // Import the icon used
-import { FaPlus, FaSearch, FaSpinner } from 'react-icons/fa';
+import {
+  FaPlus,
+  FaSearch,
+  FaSpinner,
+  FaArrowLeft,
+  FaArrowRight,
+} from 'react-icons/fa';
 
 // Import the pages used
 import DelivList from '~/pages/Delivery/DelivList';
@@ -26,6 +32,10 @@ import {
   BtnRegister,
   ListContainer,
   ListHeader,
+  ChangePageContainer,
+  LabelPage,
+  BtnPrevPage,
+  BtnNextPage,
 } from './styles';
 
 export default function ListTemplate({
@@ -33,6 +43,8 @@ export default function ListTemplate({
   searchData,
   searchFunction,
   searchQuery,
+  changePage,
+  rowsTotal,
 }) {
   const {
     title,
@@ -43,6 +55,8 @@ export default function ListTemplate({
     switchParam,
   } = configList;
   const loading = false;
+  const [page, setPage] = useState(1);
+  const totalPages = parseInt(rowsTotal / 7, 10) + (rowsTotal % 7 > 0 ? 1 : 0);
 
   // Passing params for the search
   function handleQuerySearch({ query }) {
@@ -53,7 +67,21 @@ export default function ListTemplate({
     }
   }
 
-  // Function that defines wich list must bem loaded
+  function handleChangePage(direction) {
+    if (direction === 'next' && page < totalPages) {
+      setPage(page + 1);
+    }
+
+    if (direction === 'prev' && page > 1) {
+      setPage(page - 1);
+    }
+  }
+
+  useEffect(() => {
+    changePage(page);
+  }, [changePage, page]);
+
+  // Function that defines wich list must be loaded
   function switchList(listComponent) {
     switch (listComponent) {
       case 'delivery':
@@ -156,6 +184,7 @@ export default function ListTemplate({
             )}
           </BtnSearch>
         </Form>
+
         <Link to={switchBtnRegister(switchParam)}>
           <BtnRegister>
             <FaPlus color="#fff" size={14} />
@@ -173,6 +202,16 @@ export default function ListTemplate({
         </ListHeader>
         {switchList(switchParam)}
       </ListContainer>
+      <LabelPage>Página</LabelPage>
+      <ChangePageContainer>
+        <BtnPrevPage onClick={() => handleChangePage('prev')}>
+          <FaArrowLeft color="#fff" size={20} />
+        </BtnPrevPage>
+        {page}/{totalPages}
+        <BtnNextPage onClick={() => handleChangePage('next')}>
+          <FaArrowRight color="#fff" size={20} />
+        </BtnNextPage>
+      </ChangePageContainer>
     </Container>
   );
 }
@@ -197,9 +236,13 @@ ListTemplate.propTypes = {
   ]).isRequired,
   searchFunction: PropTypes.func,
   searchQuery: PropTypes.func,
+  changePage: PropTypes.func,
+  rowsTotal: PropTypes.number,
 };
 
 ListTemplate.defaultProps = {
   searchQuery: () => {},
+  changePage: () => {},
   searchFunction: () => {},
+  rowsTotal: undefined,
 };

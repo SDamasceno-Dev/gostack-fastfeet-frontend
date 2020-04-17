@@ -37,7 +37,7 @@ export default function DelivForm(props) {
     return api
       .get('recipient', { params: { q: query } })
       .then(response => {
-        const options = response.data.map(recipient => ({
+        const options = response.data.recipientList.map(recipient => ({
           value: recipient.id,
           label: recipient.name,
         }));
@@ -56,7 +56,7 @@ export default function DelivForm(props) {
     return api
       .get('courier', { params: { q: query } })
       .then(response => {
-        const options = response.data.map(courier => ({
+        const options = response.data.courierList.map(courier => ({
           value: courier.id,
           label: courier.name,
         }));

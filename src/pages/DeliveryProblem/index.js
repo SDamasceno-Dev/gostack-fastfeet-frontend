@@ -23,11 +23,18 @@ export default function DeliveryProblem() {
   };
 
   const [search, setListSearch] = useState([]);
+  const [p, setPage] = useState(1);
+  const [rowsTotal, setRowsTotal] = useState();
 
-  async function listDelivProblem() {
+  async function listDelivProblem(page) {
     try {
-      const response = await api.get('delivery/problems');
-      setListSearch(response.data);
+      const response = await api.get('delivery/problems', {
+        params: {
+          page,
+        },
+      });
+      setListSearch(response.data.deliveriesProbList);
+      setRowsTotal(response.data.deliveriesProbCount);
     } catch (error) {
       console.tron.log(error);
       toast.error(
@@ -37,14 +44,16 @@ export default function DeliveryProblem() {
   }
 
   useEffect(() => {
-    listDelivProblem();
-  }, []);
+    listDelivProblem(p);
+  }, [p]);
 
   return (
     <ListTemplate
       configList={configList}
       searchData={search}
       searchFunction={() => listDelivProblem()}
+      changePage={setPage}
+      rowsTotal={rowsTotal}
     />
   );
 }

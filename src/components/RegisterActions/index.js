@@ -62,7 +62,8 @@ export default function Actions({
       if (switchActionParams === 'delivery') {
         // Verifies if Delivery has problem registered. If true cannot be deleted
         const response = await api.get(`/delivery/${searchItem.id}/problems`);
-        if (response.data.delivery.length > 0) {
+        console.tron.log(response);
+        if (response.data.deliveryProblemsList.length > 0) {
           alert(
             'Este registro não pode ser cancelado pois possui problemas registrados. Caso precise deletar esse registro, entre em contato com o suporte técnico.'
           );
@@ -90,10 +91,9 @@ export default function Actions({
           .delete(apiPath, {
             params: { idItem: searchItem.id },
           })
-          .then(response => {
+          .then(() => {
             toast.success('Registro deletado!');
             searchFunction();
-            console.tron.log(response);
           })
           .catch(error => {
             toast.error(
@@ -104,7 +104,6 @@ export default function Actions({
           });
       }
     } catch (err) {
-      console.tron.log(err);
       toast.error(
         'O registro não pode ser deletado. Por favor, tente mais tarde ou informe ao suporte técnico.'
       );

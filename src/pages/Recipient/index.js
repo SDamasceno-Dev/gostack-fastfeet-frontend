@@ -25,13 +25,19 @@ export default function Recipient() {
 
   const [search, setListSearch] = useState([]);
   const [query, setQuery] = useState();
+  const [p, setPage] = useState(1);
+  const [rowsTotal, setRowsTotal] = useState();
 
-  async function searchRecipient(q) {
+  async function searchRecipient(q, page) {
     try {
       const response = await api.get('recipient', {
-        params: { q },
+        params: {
+          q,
+          page,
+        },
       });
-      setListSearch(response.data);
+      setListSearch(response.data.recipientList);
+      setRowsTotal(response.data.recipientCount);
     } catch (error) {
       console.tron.log(error);
       toast.error('Erro de conexão com o Banco de dados <db:recipient>!');
@@ -39,8 +45,8 @@ export default function Recipient() {
   }
 
   useEffect(() => {
-    searchRecipient(query);
-  }, [query]);
+    searchRecipient(query, p);
+  }, [query, p]);
 
   return (
     <ListTemplate
@@ -48,6 +54,8 @@ export default function Recipient() {
       searchData={search}
       searchFunction={() => searchRecipient()}
       searchQuery={setQuery}
+      changePage={setPage}
+      rowsTotal={rowsTotal}
     />
   );
 }

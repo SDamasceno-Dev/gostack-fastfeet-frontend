@@ -33,13 +33,19 @@ export default function Delivery() {
 
   const [search, setListSearch] = useState([]);
   const [query, setQuery] = useState();
+  const [p, setPage] = useState(1);
+  const [rowsTotal, setRowsTotal] = useState();
 
-  async function searchDeliv(q) {
+  async function searchDeliv(q, page) {
     try {
       const response = await api.get('delivery', {
-        params: { q },
+        params: {
+          q,
+          page,
+        },
       });
-      setListSearch(response.data);
+      setListSearch(response.data.deliveryList);
+      setRowsTotal(response.data.deliveryCount);
     } catch (error) {
       console.tron.log(error);
       toast.error('Erro de conexão com o Banco de dados <db:deliveries>!');
@@ -47,8 +53,8 @@ export default function Delivery() {
   }
 
   useEffect(() => {
-    searchDeliv(query);
-  }, [query]);
+    searchDeliv(query, p);
+  }, [query, p]);
 
   return (
     <ListTemplate
@@ -56,6 +62,8 @@ export default function Delivery() {
       searchData={search}
       searchFunction={() => searchDeliv()}
       searchQuery={setQuery}
+      changePage={setPage}
+      rowsTotal={rowsTotal}
     />
   );
 }

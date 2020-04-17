@@ -25,22 +25,28 @@ export default function Courier() {
 
   const [search, setListSearch] = useState([]);
   const [query, setQuery] = useState();
+  const [p, setPage] = useState(1);
+  const [rowsTotal, setRowsTotal] = useState();
 
   // Get the list of all couriers in DB
-  async function searchCourier(q) {
+  async function searchCourier(q, page) {
     try {
       const response = await api.get('courier', {
-        params: { q },
+        params: {
+          q,
+          page,
+        },
       });
-      setListSearch(response.data);
+      setListSearch(response.data.courierList);
+      setRowsTotal(response.data.courierCount);
     } catch (error) {
       toast.error('Erro de conexão com o Banco de dados!');
     }
   }
 
   useEffect(() => {
-    searchCourier(query);
-  }, [query]);
+    searchCourier(query, p);
+  }, [query, p]);
 
   return (
     <ListTemplate
@@ -48,6 +54,8 @@ export default function Courier() {
       searchData={search}
       searchFunction={() => searchCourier()}
       searchQuery={setQuery}
+      changePage={setPage}
+      rowsTotal={rowsTotal}
     />
   );
 }

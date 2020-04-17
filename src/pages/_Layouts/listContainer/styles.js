@@ -116,3 +116,46 @@ export const ListHeader = styled.div`
     margin: 0 auto;
   }
 `;
+
+export const LabelPage = styled.span`
+  flex: 1;
+  font-size: 14px;
+  font-weight: bold;
+  color: #7d40e7;
+  text-align: center;
+  margin-top: 35px;
+  width: 100%;
+`;
+
+export const ChangePageContainer = styled.div`
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+`;
+
+export const BtnPrevPage = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: #7d40e7;
+  border: 0;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
+
+export const BtnNextPage = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: #7d40e7;
+  border: 0;
+  border-radius: 50%;
+  margin-left: 10px;
+`;
