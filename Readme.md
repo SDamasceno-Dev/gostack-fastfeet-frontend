@@ -159,7 +159,7 @@ Assim que o login é efetuado com sucesso, será exibida a tela na Seção "Gere
 
 Nessa seção são acompanhadas as diversas situações das encomendas cadastradas.
 
-Para que seja possível o cadastramento da encomenda, é necessário que antes já tenham sido cadastrados o **Cliente** e o **Entregador**. Esses cadastros serão demonstrados logo a seguir.
+Para que seja possível o cadastramento da encomenda, é necessário que antes já tenham sido cadastrados o **Cliente** e o **Entregador**. Esses cadastros serão demonstrados adiante.
 
 Uma vez que uma ou mais encomendas estejam cadastradas no sistema, elas estarão listadas, conforme pode ser visualizado na figura a seguir
 
