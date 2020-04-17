@@ -163,7 +163,7 @@ Para que seja possível o cadastramento da encomenda, é necessário que antes j
 
 Uma vez que uma ou mais encomendas estejam cadastradas no sistema, elas estarão listadas, conforme pode ser visualizado na figura a seguir
 
-![Screen#02 01](https://user-images.githubusercontent.com/58818002/79178451-b834cf80-7ddb-11ea-834e-733b746688b1.png)
+![Screen#02 01](https://user-images.githubusercontent.com/58818002/79620541-8fb41a80-80e6-11ea-89a2-63b55645fc71.png)
 
 Essa listagem exibe todas as informações básicas sobre a encomenda, tais como os dados do Destinatário, Entregador responsável, Cidade, Estado, bem como o Status dessa encomenda.
 
@@ -222,11 +222,11 @@ Na coluna **Ações** é possível utilizar alguns recursos para cada um dos reg
 
 Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações** de cada um dos registros, conforme indicado na figura abaixo
 
-![Screen#02 04](https://user-images.githubusercontent.com/58818002/79182600-90e30000-7de5-11ea-8859-16579236b81f.png)
+![Screen#02 04](https://user-images.githubusercontent.com/58818002/79620770-68aa1880-80e7-11ea-827a-0cbbf9438ab1.png)
 
 Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções Visualizar, Editar e Excluir, conforme a tela abaixo:
 
-![Screen#02 05](https://user-images.githubusercontent.com/58818002/79182604-93455a00-7de5-11ea-9867-d52286384faa.png)
+![Screen#02 05](https://user-images.githubusercontent.com/58818002/79620847-bc1c6680-80e7-11ea-9bc4-ae64950fadd7.png)
 
 Descrição das opções:
 
@@ -285,11 +285,11 @@ Nessa área, além de exibir a listagem dos entregadores cadastrados, é possív
 
 Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações**, conforme indicado na figura abaixo
 
-![Screen#03 04](https://user-images.githubusercontent.com/58818002/79168608-b9a4ce80-7dc0-11ea-8a84-9ac44a8d2cbb.png)
+![Screen#03 04](https://user-images.githubusercontent.com/58818002/79621149-ba06d780-80e8-11ea-9961-8f8605a6be39.png)
 
 Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções **Editar** e **Excluir** conforme exibido na figura abaixo
 
-![Screen#03 05](https://user-images.githubusercontent.com/58818002/79168763-156f5780-7dc1-11ea-8bda-4f67650dee64.png)
+![Screen#03 05](https://user-images.githubusercontent.com/58818002/79621217-f0445700-80e8-11ea-9437-b8fd8ca434b6.png)
 
 Descrição das opções:
 
