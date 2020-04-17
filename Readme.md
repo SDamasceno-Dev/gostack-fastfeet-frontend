@@ -81,13 +81,17 @@ Version: 81.0.4044.92 (Official Build) (64-bit)
 
 # :floppy_disk: Como Instalar
 
-Para que, após a clonagem do Github, este módulo funcione de forma correta, serão necessárias algumas ações para que toda a estrutura fique adequada para o seu bom funcionamento. Antes de listar os passos necessários para o preparo do ambiente, é necessário que o computador onde irá rodar este módulo, já tenha instalado e devidamente configurado o [Git](https://git-scm.com/), [Node.JS >=v12.14.0 LTS](https://nodejs.org/en/) e o [Yarn >=v1.22.4](https://yarnpkg.com/). Todos esses pacotes podem ser instalados utilizando um **Gerenciador de pacotes** compatível com o seu sistema operacional ([Homebrew](https://brew.sh/) para macOS, [Chocolatey](https://chocolatey.org/) para Windows).
+Para o bom funcionamento deste módulo, após a clonagem do Github, são necessárias algumas ações para a adequação da estrutura.
+
+Antes de listar o passo a passo para o preparo do ambiente, é necessário que o computador onde irá rodar este módulo, já tenha instalado e devidamente configurado o [Git](https://git-scm.com/), [Node.JS >=v12.14.0 LTS](https://nodejs.org/en/) e o [Yarn >=v1.22.4](https://yarnpkg.com/).
+
+Todos esses pacotes podem ser instalados utilizando um **Gerenciador de pacotes** compatível com o seu sistema operacional ([Homebrew](https://brew.sh/) para macOS, [Chocolatey](https://chocolatey.org/) para Windows).
 
 Com essa estrutura pronta, pode-se iniciar o preparo do ambiente para se rodar este módulo Frontend do Sistema Fastfeet.
 
-**1º Clonar o respositório**
+**1º Clonar o repositório**
 
-Para se efetuar a clonagem desse repositório, de dentro da pasta raiz criada lá no [Backend](https://github.com/SDamasceno-Dev/gostack-fastfeet-backend), abra uma sessão no terminal do computador, de dentro dessa pasta, e execute o seguinte comando:
+Para se efetuar a clonagem desse repositório, de dentro da pasta  criada para o Sistema Fastfeet, a mesma pasta onde já foi clonado o [Backend](https://github.com/SDamasceno-Dev/gostack-fastfeet-backend), abra uma sessão no terminal do computador, de dentro dessa pasta, e execute o seguinte comando:
 
 ```bash
 # Clona a pasta Frontend do Sistema Fastfeet
@@ -135,9 +139,9 @@ O módulo Frontend possui 5 grandes seções, vamos analisar e entender como fun
 
 ![Screen#01](https://user-images.githubusercontent.com/58818002/79156329-0d0b2280-7da9-11ea-9036-6f8e47b4d33d.png)
 
-Como se pode perceber essa seção tem basicamente a função de permitir o acesso do usuário ao módulo Frontend do Sistema Fastfeet.
+Essa seção tem a função de permitir o acesso do usuário ao módulo Frontend do Sistema Fastfeet.
 
-Para que esse acesso ocorra, é necessário a entrada de 2 informações, o **E-MAIL** e a **SENHA** cadastrados no sistema.
+Para que esse acesso ocorra, é necessário a entrada de dois dados, o **E-MAIL** e a **SENHA** cadastrados no sistema.
 
 Observe abaixo uma animação demonstrando como efetuar o login no Sistema Fastfeet
 
@@ -153,15 +157,15 @@ Assim que o login é efetuado com sucesso, será exibida a tela na Seção "Gere
 
 ![Screen#02 00](https://user-images.githubusercontent.com/58818002/79161025-2adc8580-7db1-11ea-9159-b233f5a7c8db.png)
 
-Nessa seção é onde são acompanhadas as diversas situações das encomendas cadastradas.
+Nessa seção são acompanhadas as diversas situações das encomendas cadastradas.
 
-Para que uma encomenda seja cadastrada corretamente, é necessário que antes já se tenham cadastrados os **Clientes**, **Entregadores** e as próprias **Encomendas**.
+Para que seja possível o cadastramento da encomenda, é necessário que antes já tenham sido cadastrados o **Cliente** e o **Entregador**. Esses cadastros serão demonstrados logo a seguir.
 
 Uma vez que uma ou mais encomendas estejam cadastradas no sistema, elas estarão listadas, conforme pode ser visualizado na figura a seguir
 
 ![Screen#02 01](https://user-images.githubusercontent.com/58818002/79178451-b834cf80-7ddb-11ea-834e-733b746688b1.png)
 
-Essa listagem exibe todas as informações básicas sobre a encomenda, como os dados do Destinatário, do Entregador responsável, da Cidade, do Estado e o Status dessa encomenda.
+Essa listagem exibe todas as informações básicas sobre a encomenda, tais como os dados do Destinatário, Entregador responsável, Cidade, Estado, bem como o Status dessa encomenda.
 
 Está seção é dividida em 3 grandes partes conforme mostrado abaixo
 
@@ -177,11 +181,11 @@ As áreas indicadas são as seguintes:
 
 * **2- Cadastro das encomendas**
 
-  Ao clicar nesse botão aparecerá uma tela igual a mostrada abaixo
+  Ao clicar no botão **"Cadastrar"**, aparecerá a tela para **Cadastramento de encomendas**, conforme exibida abaixo
 
   ![Screen#02 03](https://user-images.githubusercontent.com/58818002/79180460-65a9e200-7de0-11ea-86ed-deb95953b6ec.png)
 
-Para se efetuar o cadastro de uma encomenda, é muito simples e basta seguir os seguintes passos:
+O Cadastramento de encomendas é muito simples e basta seguir os seguintes passos:
 
 * Selecionar o Destinatário da encomenda, por meio da lista exibida ou digitando o nome dele, no campo destinado;
 * Selecionar o Entregador da encomenda, por meio da lista exibida ou digitando o nome dele, no campo destinado;
@@ -190,14 +194,14 @@ Para se efetuar o cadastro de uma encomenda, é muito simples e basta seguir os 
 
 Cadastro efetuado com sucesso! :tada:
 
-:pushpin: **Obs.**: Para que o Destinatário e o Entregador possam ser selecionados, é necessários que eles tenha sido previamente cadastrados nos Sistema Fastfeet. Nas próximas seções será demonstrado como efetuar esses cadastros.
+:pushpin: **Obs.**: Para que o Destinatário e o Entregador possam ser selecionados, é necessário que eles tenha sido previamente cadastrados nos Sistema Fastfeet. Nas próximas seções será demonstrado como efetuar esses cadastros.
 
 Abaixo existe uma animação demonstrando o cadastro de uma encomenda
 
 ![#03_CadEncomenda](https://user-images.githubusercontent.com/58818002/79180878-6c852480-7de1-11ea-99d5-39606d5b6e94.gif)
 
 * **3- Listagem das encomendas**
-Nessa área, além de exibir a listagem das encomendas cadastradas, existem outras duas colunas importantes, a coluna **Status** e a coluna **Ações**.
+Nessa área são listadas as encomendas cadastradas. Nela temos ainda as informações acerca do **Status** da encomenda e ainda as **Ações** a serem tomadas a respeito da mesma.
 
 ### Coluna Status
 
@@ -220,15 +224,15 @@ Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações*
 
 ![Screen#02 04](https://user-images.githubusercontent.com/58818002/79182600-90e30000-7de5-11ea-8859-16579236b81f.png)
 
-Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme a tela abaixo
+Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções Visualizar, Editar e Excluir, conforme a tela abaixo:
 
 ![Screen#02 05](https://user-images.githubusercontent.com/58818002/79182604-93455a00-7de5-11ea-9867-d52286384faa.png)
 
-com as seguintes opções:
+Descrição das opções:
 
 * **Visualizar**: Permite a visualização dos detalhes da encomenda.
 
-    Caso a visualização seja feita de uma encomenda que foi corretamente entregue, é possível também visualizar a assinatura capturada dessa entrega.
+    Caso a encomenda esteja com status **Entregue** é possível visualizar, além dos dados cadastrais, a assinatura capturada do recebedor.
 
     Um exemplo dessa visualização é exibido na figura abaixo
 
@@ -245,15 +249,7 @@ com as seguintes opções:
 
 # :rocket: Seção "Entregadores"
 
-Em um primeiro acesso a área de cadastro e gerenciamento dos entregadores é apresentada conforme a figura abaixo
-
-![Screen#03 00](https://user-images.githubusercontent.com/58818002/79161611-26fd3300-7db2-11ea-87e2-eaf7bdb3cd23.png)
-
-Conforme sejam cadastrados novos entregadores essa tela passa a exibir a seguinte aparência
-
-![Screen#03 01](https://user-images.githubusercontent.com/58818002/79164267-1d29fe80-7db7-11ea-9c1d-83afb35f36cf.png)
-
-Está área é dividida em 3 grandes partes conforme mostrado abaixo
+Seção destinada ao cadastro e gerenciamento de entregadores. Está dividida em três áreas, conforme exibido na figura abaixo:
 
 ![Screen#03 02](https://user-images.githubusercontent.com/58818002/79169553-228d4600-7dc3-11ea-999d-e83197c93bda.png)
 
@@ -267,7 +263,7 @@ As áreas indicadas são as seguintes:
 
 * **2- Cadastro dos entregadores**
 
-  Ao clicar nesse botão aparecerá uma tela igual a mostrada abaixo
+  Ao clicar no botão “Cadastrar”, aparecerá a tela para **Cadastramento de entregadores**, conforme figura X abaixo
 
 ![Screen#03 03](https://user-images.githubusercontent.com/58818002/79165282-24520c00-7db9-11ea-804a-c0c5511a8900.png)
 
@@ -291,11 +287,11 @@ Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações*
 
 ![Screen#03 04](https://user-images.githubusercontent.com/58818002/79168608-b9a4ce80-7dc0-11ea-8a84-9ac44a8d2cbb.png)
 
-Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme exibido nessa outra tela,
+Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções **Editar** e **Excluir** conforme exibido na figura abaixo
 
 ![Screen#03 05](https://user-images.githubusercontent.com/58818002/79168763-156f5780-7dc1-11ea-8bda-4f67650dee64.png)
 
-com as seguintes opções:
+Descrição das opções:
 
 * **Editar**: Permite a edição dos dados do entregador;
 * **Excluir**: Permite a exclusão do registro do entregador cadastrado.
@@ -307,15 +303,7 @@ com as seguintes opções:
 
 # :rocket: Seção "Destinatários"
 
-Em um primeiro acesso a área de cadastro e gerenciamento dos destinatários é apresentada conforme a figura abaixo
-
-![Screen#04 00](https://user-images.githubusercontent.com/58818002/79166351-59f7f480-7dbb-11ea-930d-12c8700b8974.png)
-
-Conforme sejam cadastrados novos destinatários essa tela passa a exibir a seguinte aparência
-
-![Screen#04 01](https://user-images.githubusercontent.com/58818002/79169411-c1fe0900-7dc2-11ea-9aa2-f623891375a2.png)
-
-Está área é dividida em 3 grandes partes conforme mostrado abaixo
+Seção destinada ao cadastro e gerenciamento de Destinatários/Clientes. Está dividida em três áreas, conforme exibido na figura abaixo:
 
 ![Screen#03 02](https://user-images.githubusercontent.com/58818002/79164756-10f27100-7db8-11ea-9901-5f8818264585.png)
 
@@ -328,7 +316,7 @@ As áreas indicadas são as seguintes:
 
 * **2- Cadastro dos destinatários**
 
-  Ao clicar nesse botão aparecerá uma tela igual a mostrada abaixo
+  Ao clicar no botão **“Cadastrar”**, aparecerá a tela para **Cadastramento de destinatários/clientes**, conforme exibido na figura abaixo:
 
   ![Screen#04 03](https://user-images.githubusercontent.com/58818002/79169771-ad6e4080-7dc3-11ea-919b-59a45bacc2b6.png)
 
@@ -354,28 +342,20 @@ Nessa área, além de exibir a listagem dos destinatários cadastrados, é poss�
 
   ![Screen#04 04](https://user-images.githubusercontent.com/58818002/79183131-f84d7f80-7de6-11ea-86cb-b73b1d7d886c.png)
 
-  Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme a tela abaixo
+  Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções **Editar** e **Excluir** conforme exibido na figura abaixo:
 
   ![Screen#04 05](https://user-images.githubusercontent.com/58818002/79170384-9e888d80-7dc5-11ea-953f-523d389f8990.png)
 
-  com as seguintes opções:
+  Descrição das opções:
 
 * **Editar**: Permite a edição dos dados do entregador;
 * **Excluir**: Permite a exclusão do registro do entregador cadastrado.
 
 # :rocket: Seção "Problemas na entrega"
 
-Em um primeiro acesso a área de visualização dos problemas das entregas é apresentada conforme a figura abaixo
-
-![Screen#05 00](https://user-images.githubusercontent.com/58818002/79172168-55870800-7dca-11ea-9978-9681530237a6.png)
-
-Conforme sejam cadastrados os problemas nas entregas (esses cadastros são realizados no módulo **Mobile** pelo entregador), eles são exibidos aqui.
-
-A figura abaixo apresenta alguns problemas cadastrados
+Seção destinada a visualização dos problemas nas entregas (o seu cadastro é realizado pelo entregador no módulo **Mobile**), conforme exibido na figura abaixo:
 
 ![Screen#05 01](https://user-images.githubusercontent.com/58818002/79173193-3473e680-7dcd-11ea-99d3-af97aca66a29.png)
-
-Esta seção tem somente uma grande área, que é onde são exibidos os problemas que ocorreram com as entregas.
 
 Conforme os problemas são exibidos, é possível realizar algumas ações para cada um desses registros.
 
@@ -383,7 +363,7 @@ Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações*
 
 ![Screen#05 02](https://user-images.githubusercontent.com/58818002/79174819-3f7d4580-7dd2-11ea-81d1-daa168a76478.png)
 
-Ao se clicar nos **...** (3 pontos) será exibido um menu, conforme a tela abaixo
+Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções **Visualizar** e **Cancelar Encomenda** conforme a figura X abaixo
 
 ![Screen#05 03](https://user-images.githubusercontent.com/58818002/79174847-57ed6000-7dd2-11ea-8c6e-360bb64a34d1.png)
 
@@ -397,7 +377,7 @@ com as seguintes opções:
 
 No momento que uma entrega é cancelada, o entregador vinculado a esta encomenda irá receber um e-mail informando do cancelamento da entrega dessa encomenda.
 
-Assim, todo o conteúdo referente ao Módulo Frontend do Sistema Fastfeet está concluído. Caso teha interesse, pode conhecer o Módulo Mobile do Sistema Fastfeet clicando [aqui](https://github.com/SDamasceno-Dev/gostack-fastfeet-mobile)
+Assim, todo o conteúdo referente ao Módulo Frontend do Sistema Fastfeet está concluído. Caso tenha interesse, pode conhecer o Módulo Mobile do Sistema Fastfeet clicando [aqui](https://github.com/SDamasceno-Dev/gostack-fastfeet-mobile)
 
 ---
 Elaborado, criado e editado por **Sandro de Oliveira Damasceno** :space_invader:   [github!](https://github.com/SDamasceno-Dev) :octocat:
