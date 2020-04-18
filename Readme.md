@@ -333,7 +333,7 @@ Abaixo existe uma animação demonstrando o cadastro de um destinatário
 
 :heavy_exclamation_mark: **Regras de negócio**
 
-* No cadastro de um destinatário **Todos** os campos são obrigatórios. Caso o campo **Complemento** não exista, colocar um **-** ou inserir **não existe** como informação.
+* No cadastro de um destinatário **Todos** os campos são obrigatórios. Caso o campo **Complemento** não exista, preencher com qualquer caracter, como sugestão **-** ou inserir **não existe** como informação.
 
 * **3- Listagem dos destinatários**
 Nessa área, além de exibir a listagem dos destinatários cadastrados, é possível realizar algumas ações para cada um desses registros.
@@ -363,7 +363,7 @@ Para isso, basta clicar nos **...** (3 pontos), localizados na coluna **Ações*
 
 ![Screen#05 02](https://user-images.githubusercontent.com/58818002/79174819-3f7d4580-7dd2-11ea-81d1-daa168a76478.png)
 
-Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções **Visualizar** e **Cancelar Encomenda** conforme a figura X abaixo
+Ao se clicar nos **...** (3 pontos) será exibido um menu com as Opções **Visualizar** e **Cancelar Encomenda** conforme a figura abaixo
 
 ![Screen#05 03](https://user-images.githubusercontent.com/58818002/79174847-57ed6000-7dd2-11ea-8c6e-360bb64a34d1.png)
 
