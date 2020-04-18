@@ -91,7 +91,7 @@ Com essa estrutura pronta, pode-se iniciar o preparo do ambiente para se rodar e
 
 **1º Clonar o repositório**
 
-Para se efetuar a clonagem desse repositório, de dentro da pasta  criada para o Sistema Fastfeet, a mesma pasta onde já foi clonado o [Backend](https://github.com/SDamasceno-Dev/gostack-fastfeet-backend), abra uma sessão no terminal do computador, de dentro dessa pasta, e execute o seguinte comando:
+Para se efetuar a clonagem desse repositório, de dentro da pasta  criada para o Sistema Fastfeet, a mesma pasta onde já foi clonado o módulo [Backend](https://github.com/SDamasceno-Dev/gostack-fastfeet-backend), abra uma sessão no terminal do computador, de dentro dessa pasta, e execute o seguinte comando:
 
 ```bash
 # Clona a pasta Frontend do Sistema Fastfeet
@@ -118,7 +118,7 @@ $ yarn
 
 **4º Iniciar o módulo**
 
-Após a instalação das dependências necessárias, basta iniciar o módulo Frontend (web). Para isso executar o seguinte comando:
+Após a instalação das dependências necessárias, basta iniciar o módulo Frontend (web). Para isso execute o seguinte comando:
 
 ```bash
 # Iniciar o módulo Frontend
